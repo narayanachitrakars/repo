@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+   <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/Sidebar.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/d3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src='/js/firebase.js'></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    <script src='/js/firebase.js'></script>
+    <link rel="stylesheet" href="css/pagenav.css">
+    <script src="/js/mouseEvents.js"></script>
+    <script type="text/javascript" src="/js/companyProfileId.js"></script>
+    <script type="text/javascript" src="/js/ui_constants.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
+    <script type="text/javascript" src="/js/richTextEditor.js"></script>
+    <script type="text/javascript" src="/js/openVideoOnMouseOver.js"></script>
+    <script type="text/javascript" src="js/filePaths.js"></script>
+    <script type="text/javascript" src="/js/pagenationControl.js"></script>
+    <script type="text/javascript" src="/js/companyprofile.js"></script>
+
+<!-- 
+    <style type="text/css">
+        .owl-theme .owl-controls .owl-page {
+    position: relative;
+    display: inline-block;
+    width: 4.5em;
+    height: 3em;
+    margin: 0 .25em;
+    outline: none;
+    transition: all .1s ease-in-out; }
+
+    </style> -->
+   
+  </head>
+  <body style="border:10px;border-style:solid;border-color:#6F6E6D;">
+    <div id="preloader"></div>
+    <form id="contact-form" action="<%-fullurl%>" method="post" enctype = "multipart/form-data" >
+        <input type="text" id='filledDetailsStatus' name='filledDetailsStatus' style="display: none" />
+        <div style="width:100%">
+        <div style="float:left;width:60%;margin-top:1%;"> 
+                <input type="checkbox" id="myCheck" style="margin-left:20%;pointer-events: none;display: none">
+                <input  style="margin-left: 15%;"  type="button" id='saveId' value="Save" onclick="chcek()">
+            <h3 style="text-align:center;color:white;cursor:default;margin-top: -2.5%" id='titileName'>Company Profile</h3>
+            <div style="margin-top:-4.5%;font-size:20px;">
+                         <% if(elem.TemplateDemoVideo ==''){ %>
+   
+ <% } else{ %>  
+                      <a href="<%= elem.TemplateDemoVideo %>" class="PlayDemoVideo" style="float: right;color:white">Play demo video</a><br><% } %> 
+                       </div>
+        </div>
+    <div style="float:right;width:30%;margin-top:5px;"> 
+        
+      <!-- <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="26px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve" >
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button> -->
+
+    </div>
+  </div>
+        
+    <div id=wrapper>
+      
+      <div id=left style="width:72%;height:97%;margin-left:3.5%;margin-top:1%;border:4px;border-style:outset;border-color:#C1C0BF">
+        <div>
+
+ <input id="updated_crop_img" type="text" name='landingPage'  style="display: none;" />
+ <input id="productLogoId" type="text" name='LogoField' style="display: none;"  />
+<input type="text" id="screen1Id" name='screen1'  style="display: none;" />
+<input type="text" id="screen2Id" name='screen2'  style="display: none;" />
+<input type="text" id="screen3Id" name='screen3'  style="display: none;" />
+<input type="text" id="screen4Id" name='screen4'  style="display: none;" />
+<input type="text" id="screen5Id" name='screen5'  style="display: none;" />
+<input type="text" id="screen6Id" name='screen6'  style="display: none;" />
+<input type="text" id="screen7Id" name='screen7'  style="display: none;" />
+<input type="text" id="screen8Id" name='screen8'  style="display: none;" />
+<input type="text" id="screen9Id" name='screen9'  style="display: none;" />
+<input type="text" id="screen10Id" name='screen10'  style="display: none;" />
+<input type="text" id="screen11Id" name='screen11'  style="display: none;" />
+<input type="text" id="screen12Id" name='screen12'  style="display: none;" />
+<input type='text'  id='dynamica_websiteName'  style="font-size: 35px;width:100%;display: none;"   name="websiteName"  placeholder="Add your website here"  />
+
+     
+</div>
+
+
+<div id="owl-demo">
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg1%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg2%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg3%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg4%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg5%></div>
+        <div class="item disable-owl-swipe"><%include company_profile_svg_ejs_files/svg6%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg7%></div>
+        <div class="item disable-owl-swipe" ><%include company_profile_svg_ejs_files/svg8%></div>
+        
+    </div>
+
+
+  
+      </div>
+ <!-- <div class="preload">
+</div> -->
+      <div id='editableAreaId' style="background-color:#333333;height:97%;width:18%;border:4px;border-style:outset;border-color:#C1C0BF;margin-top:1%">
+            <div class="" >
+               
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='defaultActionTitle'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                     Place over the screen and edit the templates and Render Video
+                     </div> 
+                     
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='ntngEditable'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                     There is no editable fileds
+                     </div> 
+                     
+                          </div>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30px; padding-left:0px; padding-right:0px;" id='summernote_textarea'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                       <div id ="actionTitle">Write your text here</div>
+                     </div> 
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px; margin-top: 10px; "> 
+                      <textarea class="click2edit" id="textEditorId" name=""></textarea>
+                     </div> 
+                      <br><span id="errmsgId" class='errmsg' style="color: #ff9900"></span><br>
+                   </div> 
+
+
+
+
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id='addServiceID'>
+                    <br> <br>
+
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                    <br>
+                                     Add your services 
+                                     </div> 
+                 <br> <br>
+                 <select id="mySelect"  style="width : 100px;  " onchange="addServ(this)">
+                   <option>Select </option>
+                   <option>2</option>
+                   <option>3</option>
+                   <option>4</option>
+                   <option>5</option>
+                   <option>6</option>
+                 </select>
+                 
+                 
+                    </div> 
+                </div> 
+                 
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id='addIconsID'>
+                      <br> <br>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                                     Add Icons 
+                                     </div> 
+                 <br>
+                 <select id="iconsSelect" onchange="addIconsParent(this.id)">
+                   <option>2</option>
+                   <option>3</option>
+                   <option>4</option>
+                   <option>5</option>
+                   <option>6</option>
+                 </select>
+                    </div> 
+                 
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id='addMemDetails'> <br> <br>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                                     Add your Core Members 
+                                     </div> 
+                 <br>
+                 <select id="addMemId" onchange="addMember(this.id)">
+                    <option>2</option>
+                   <option>3</option>
+                   <option>4</option>
+                   <option>5</option>
+                 </select>
+                    </div> 
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;text-align: center;" id='imageEditSectionId'>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                    Upload your Image here
+                     </div>
+  
+                    <div class="box-2" style="margin-top: 8%">
+                        <div class="imagePlaceForCrop"></div>
+                    </div>
+                    
+                  
+                    
+                    <div class="box">
+                        <div class="options hide">
+                        
+                        <input type="number" class="img-w" value="300" min="100" max="1200" style="display: none;" />
+                        </div>
+                        
+                        <button class="btn save hide" type="button">Save</button>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='stock_images_div'>
+                    <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                        Stock Images
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                   <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                      <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='bg_div'>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="color:#fff; font-size:15px;">
+                        Background:
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <input type='text' id="custom" />
+                    </div>
+                </div>
+                 
+
+
+            </div>
+
+   
+
+    </div>
+
+
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <script  src="js/image_upload.js"></script>
+    <script type="text/javascript" src="/js/richTextEditor.js"></script>
+     </form>
+  </body>
+</html>
+
+

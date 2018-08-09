@@ -1,0 +1,188 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="/css/styles.min.css?v8">
+	<script src="/js/ui_constants.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+	<!-- <script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.3/fabric.min.js"></script>
+	<!-- <script src="/js/polyfills.4eaba750e6fddef2d2e9.js"></script>
+	<script src="/js/runtime.fbb64b8700d58ff90a3b.js"></script>
+	<script src="/js/main.d993e787cdb0a8cd49fe.js"></script>
+	<link href="/css/styles.0db04c33be146577c75b.css" rel="stylesheet"> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style type="text/css">
+		/* body{padding:40px;background:#4f4f4f;color:#efefef} */
+	
+	#snoAlertBox{
+		position:absolute;
+		z-index:1400;
+	   top:0%;
+		left:16%;
+		margin:0px auto;
+		text-align:center;
+		display:none;
+	}
+	  </style>
+	  <script>
+	  
+	//   $(window).load(function(){
+		function closeSnoAlertBox(){
+window.setTimeout(function () {
+	swal.close();
+}, 3000);
+} 
+    // });  
+		</script>
+
+</head>
+<body>
+		<div id="snoAlertBox" class="alert alert-success" data-alert="alert">Your design has been saved</div>
+		<!-- <canvas id="c" width="600" height="900" ></canvas> -->
+<pixie-editor>
+	
+	<div class="global-spinner">
+		<style>.global-spinner {display: none; align-items: center; justify-content: center; z-index: 999; background: #fff; position: fixed; top: 0; left: 0; width: 100%; height: 100%;}</style>
+		<style>.la-ball-spin-clockwise,.la-ball-spin-clockwise>div{position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.la-ball-spin-clockwise{display:block;font-size:0;color:#1976d2}.la-ball-spin-clockwise.la-dark{color:#333}.la-ball-spin-clockwise>div{display:inline-block;float:none;background-color:currentColor;border:0 solid currentColor}.la-ball-spin-clockwise{width:32px;height:32px}.la-ball-spin-clockwise>div{position:absolute;top:50%;left:50%;width:8px;height:8px;margin-top:-4px;margin-left:-4px;border-radius:100%;-webkit-animation:ball-spin-clockwise 1s infinite ease-in-out;-moz-animation:ball-spin-clockwise 1s infinite ease-in-out;-o-animation:ball-spin-clockwise 1s infinite ease-in-out;animation:ball-spin-clockwise 1s infinite ease-in-out}.la-ball-spin-clockwise>div:nth-child(1){top:5%;left:50%;-webkit-animation-delay:-.875s;-moz-animation-delay:-.875s;-o-animation-delay:-.875s;animation-delay:-.875s}.la-ball-spin-clockwise>div:nth-child(2){top:18.1801948466%;left:81.8198051534%;-webkit-animation-delay:-.75s;-moz-animation-delay:-.75s;-o-animation-delay:-.75s;animation-delay:-.75s}.la-ball-spin-clockwise>div:nth-child(3){top:50%;left:95%;-webkit-animation-delay:-.625s;-moz-animation-delay:-.625s;-o-animation-delay:-.625s;animation-delay:-.625s}.la-ball-spin-clockwise>div:nth-child(4){top:81.8198051534%;left:81.8198051534%;-webkit-animation-delay:-.5s;-moz-animation-delay:-.5s;-o-animation-delay:-.5s;animation-delay:-.5s}.la-ball-spin-clockwise>div:nth-child(5){top:94.9999999966%;left:50.0000000005%;-webkit-animation-delay:-.375s;-moz-animation-delay:-.375s;-o-animation-delay:-.375s;animation-delay:-.375s}.la-ball-spin-clockwise>div:nth-child(6){top:81.8198046966%;left:18.1801949248%;-webkit-animation-delay:-.25s;-moz-animation-delay:-.25s;-o-animation-delay:-.25s;animation-delay:-.25s}.la-ball-spin-clockwise>div:nth-child(7){top:49.9999750815%;left:5.0000051215%;-webkit-animation-delay:-.125s;-moz-animation-delay:-.125s;-o-animation-delay:-.125s;animation-delay:-.125s}.la-ball-spin-clockwise>div:nth-child(8){top:18.179464974%;left:18.1803700518%;-webkit-animation-delay:0s;-moz-animation-delay:0s;-o-animation-delay:0s;animation-delay:0s}.la-ball-spin-clockwise.la-sm{width:16px;height:16px}.la-ball-spin-clockwise.la-sm>div{width:4px;height:4px;margin-top:-2px;margin-left:-2px}.la-ball-spin-clockwise.la-2x{width:64px;height:64px}.la-ball-spin-clockwise.la-2x>div{width:16px;height:16px;margin-top:-8px;margin-left:-8px}.la-ball-spin-clockwise.la-3x{width:96px;height:96px}.la-ball-spin-clockwise.la-3x>div{width:24px;height:24px;margin-top:-12px;margin-left:-12px}@-webkit-keyframes ball-spin-clockwise{0%,100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);transform:scale(0)}}@-moz-keyframes ball-spin-clockwise{0%,100%{opacity:1;-moz-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-moz-transform:scale(0);transform:scale(0)}}@-o-keyframes ball-spin-clockwise{0%,100%{opacity:1;-o-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-o-transform:scale(0);transform:scale(0)}}@keyframes ball-spin-clockwise{0%,100%{opacity:1;-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1)}20%{opacity:1}80%{opacity:0;-webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transform:scale(0)}}</style>
+		<div class="la-ball-spin-clockwise la-2x">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			
+		</div>
+	</div>
+	<script>setTimeout(function() {
+		var spinner = document.querySelector('.global-spinner');
+		if (spinner) spinner.style.display = 'flex';
+	}, 50);</script>
+</pixie-editor>
+<script src="/js/scripts.min.js?v8"></script>
+<!-- <script src="scripts.js"></script> -->
+
+<script>
+	var full_url = document.URL
+	var url_id = "<%-fullurl.split('/')%>";
+	var id=url_id.split('?')[0].replace(',','');
+    var pixie = new Pixie({
+		urls:{
+			assets:'/'
+		},
+	
+		blankCanvasSize :{},
+		
+		// image: '/images/image.png',
+
+    onLoad: function() {
+		
+		var dbStatus='<%=status%>';
+      
+		
+		if('<%=status%>'==''){
+			pixie.http().post(globalURL+'/get/json/flyerJosn/', {id: id}).subscribe(function(response) {
+				
+				pixie.loadState(response.json);
+            });
+		}
+		else{
+			
+			console.log(<%-JSON.stringify(json)%>);
+			pixie.loadState(<%-JSON.stringify(json)%>);
+		}
+		
+  
+    },
+		onSave: function()
+		{
+			var myImage = new Image();
+        myImage.src = '/gif/progress.gif';
+                        swal({
+  title:"<b style='font-size:25px'>Your design is saving.....</b>",
+//content: span,
+  text: "<img src='"+ myImage.src +"' width=70px/>",
+  html: true,
+  showConfirmButton: false
+}); 
+			var json=pixie.getState();
+			var state = pixie.getState();
+				var canvas1 = document.createElement('canvas');
+				canvas1.id  = "c";
+				canvas1.style.display="none";
+				// canvas1.width = 750;
+				// canvas1.height = 842;
+				canvas1.width = JSON.parse(state).canvas.objects[0].width;
+			 canvas1.height = JSON.parse(state).canvas.objects[0].height;
+			var canvas = window._canvas = new fabric.Canvas('c');
+			canvas.setHeight(JSON.parse(state).canvas.objects[0].height);
+			canvas.setWidth(JSON.parse(state).canvas.objects[0].width);
+			var array = [];
+		// console.log(JSON.parse(state).canvas.objects.length);
+			for(var i = 0 ; i< JSON.parse(state).canvas.objects.length; i++ ){
+				console.log("LOgging")
+			console.log(JSON.parse(state).canvas.objects[0])
+			console.log(JSON.parse(state).canvas.objects[0].width)
+				if(i != 0){
+					
+					array.push(JSON.parse(state).canvas.objects[i]);
+				}
+			}
+			var finalJson = '{"objects":'+ JSON.stringify(array) + '}'
+			
+			canvas.loadFromJSON(finalJson, canvas.renderAll.bind(canvas), function (o, object) {
+				fabric.log(o, object);
+				
+				   
+			});
+		
+		
+		  setTimeout(function(){
+			var pngUrl = canvas.toDataURL();
+			
+			
+		 pixie.http().post(globalURL+'/generateGif', {pngUrl: pngUrl,json:json,templateId:id}).subscribe(function(response) {
+			// swal("Here's the title!", "...and here's the text!");
+			// sweetAlert("Success...", "Your design as been save", "success"); //The error will display
+// 				$("#snoAlertBox").fadeIn();
+//    closeSnoAlertBox();
+// var span = document.createElement("span");
+// span.innerHTML = "<b>Your design has been saved.</b><br><b>Click on Buy Now next</b>";
+swal.close();
+// swal({
+	
+//   title: "Good job!",
+//   content: span,
+//   icon: "success",
+//   buttons: false,
+//   allowOutsideClick: "true" 
+// //  showConfirmButton: false
+// });
+// closeSnoAlertBox();
+            });
+    
+}, 50);
+
+
+
+	
+
+
+
+
+
+		},
+		
+		
+
+	});
+	
+</script>
+</body>
+</html>

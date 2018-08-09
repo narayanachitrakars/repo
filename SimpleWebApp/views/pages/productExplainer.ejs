@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style3.css">
+    <script type="text/javascript" src="/js/Jquery.min.js"></script>
+    <script type="text/javascript" src="/js/pgenavigation.js"></script>
+    <script type="text/javascript" src="/js/ids_file.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    <script type="text/javascript" src="/js/popup.js"></script>
+    <script type="text/javascript" src="/js/vimeocdn.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <script type="text/javascript" src="/js/jquery_ui.js"></script>
+    <script src='/js/firebase.js'></script>
+ <script >
+    var config = {
+    apiKey: "AIzaSyCZWa5wChnendahT6sTdfNJhmFbnI8Cz5g",
+    authDomain: "productexplainer.firebaseapp.com",
+    databaseURL: "https://productexplainer.firebaseio.com",
+    projectId: "productexplainer",
+    storageBucket: "productexplainer.appspot.com",
+    messagingSenderId: "350462790215"
+};
+
+firebase.initializeApp(config);
+var messaging = firebase.messaging();
+messaging.onMessage((notif) => {
+    var title=notif.notification.title;
+var options ={
+body:notif.notification.body,
+icon:notif.notification.icon
+}
+noti= new Notification(title, options);
+ });
+ </script>
+   
+
+    <!-- <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/start/jquery-ui.css"> -->
+    <script type="text/javascript">
+         var browser;
+            $.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
+            if($.browser.chrome)
+            {
+                browser='Chrome';
+                $.browser.safari = false;
+            }
+            if($.browser.safari)
+            {
+                browser='Safari';
+            }
+            if($.browser.mozilla)
+            {
+                browser='mozilla';
+            }
+      function readURL(input,number,id)
+    { 
+        $.LoadingOverlay("show"); //loader
+        if(input.files && input.files[0])
+        {
+            var reader = new FileReader();
+            reader.onload = function (e)
+            {
+                $.LoadingOverlay("show");
+                if(number==0)
+                {
+           
+                    $.LoadingOverlay("hide");
+                    $.LoadingOverlay("show");
+                    $('#image1')
+                    .attr('src', e.target.result)
+                    .width(50);
+                    $.LoadingOverlay("hide");
+                    var a = document.getElementById(svg_seen6);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+
+                     var svgid8svgobject = document.getElementById(svg_seen8);
+                    var svgid8XMLobject = svgid8svgobject.contentDocument;
+                    svgid8XMLobject.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    var svgid15svgobject = document.getElementById(svg_seen15);
+                    var svgid15XMLobject = svgid15svgobject.contentDocument;
+                    svgid15XMLobject.querySelector(img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==1)
+                {
+                    $.LoadingOverlay("hide");
+                    $.LoadingOverlay("show");
+                    $('#image2')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    $.LoadingOverlay("hide");
+                    var a = document.getElementById(svg_seen10);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==2)
+                {
+                    $.LoadingOverlay("hide");
+                    $.LoadingOverlay("show");
+                    $('#image3')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    $.LoadingOverlay("hide"); 
+                    var a = document.getElementById(svg_seen11);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else
+                {
+                    $.LoadingOverlay("hide");
+                    $.LoadingOverlay("show");
+                    $('#image4')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    $.LoadingOverlay("hide"); 
+                    var a = document.getElementById(svg_seen12);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                } 
+                     
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+        if(number==0)
+        {  
+            if(document.getElementById('fileid').value=='')
+            {
+                $("#errmsg21").html('please select image').show();
+                var a = document.getElementById(svg_seen6);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/productLogo.png');
+                 $.LoadingOverlay("hide");
+               
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#errmsg21").html("").show().fadeOut("slow"); 
+            }
+
+        }   
+        if(number==1)
+        {
+            if(document.getElementById('screen1id').value=='')
+            {
+                $("#errmsg22").html('please select image').show();
+                var a = document.getElementById(svg_seen10);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+                 $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#errmsg22").html("").show().fadeOut("slow"); 
+            }
+        }
+        if(number==2)
+        {
+            if(document.getElementById('screen2id').value=='')
+            {
+                $("#errmsg23").html('please select image').show();
+                var a = document.getElementById(svg_seen11);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+                $.LoadingOverlay("hide"); 
+            }
+            else
+            {
+                $.LoadingOverlay("hide");  
+                $("#errmsg23").html("").show().fadeOut("slow"); 
+            }
+        }   
+        if(number==3)
+        {
+            if(document.getElementById('screen3id').value=='')
+            {
+                $("#errmsg24").html('please select image').show();
+                var a = document.getElementById(svg_seen12);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+                $.LoadingOverlay("hide"); 
+            }
+            else
+            {
+                $.LoadingOverlay("hide");   
+                $("#errmsg24").html("").show().fadeOut("slow"); 
+            }
+        }
+    }
+
+   
+
+   
+    // code for data reflected on svg images
+
+    function details(svgid,gid1,gid2,gid3,gid4,gid5,gid6,gid7,gid8,svgid4)
+    {
+      
+        var a = document.getElementById(svgid);
+        var svgDoc = a.contentDocument;
+        if(svgid==svg_seen1)
+        {
+              if(document.getElementById(screen_one_filed_two).value=='')
+            {
+                   
+                svgDoc.getElementById(gid2).childNodes[0].textContent='Profession';
+            }
+            else
+            { 
+                 
+                svgDoc.getElementById(gid2).childNodes[0].textContent= document.getElementById(screen_one_filed_two).value;
+            }
+            if(document.getElementById(screen_one_filed_one).value=='')
+            {
+                 
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Character Name';
+                
+                var svgid5svgobject = document.getElementById(gid3);
+                var svgid5XMLobject = svgid5svgobject.contentDocument;
+                svgid5XMLobject.getElementById(gid4).childNodes[1].textContent='Character Name';
+            }
+            else
+            { 
+                
+                svgDoc.getElementById(gid1).childNodes[0].textContent=document.getElementById(screen_one_filed_one).value;
+                 var svgid5svgobject = document.getElementById(gid3);
+                var svgid5XMLobject = svgid5svgobject.contentDocument;
+                svgid5XMLobject.getElementById(gid4).childNodes[1].textContent=document.getElementById(screen_one_filed_one).value;
+            }
+            
+            
+        }
+        if(svgid==svg_seen2)
+        {
+            var value=document.getElementById(screen_two_filed_one).value;
+            if(value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Provide your problem statement';
+                svgDoc.getElementById(gid2).childNodes[0].textContent='here';
+            }
+            else
+            {
+                if(value.length<=31)
+                { 
+                    svgDoc.getElementById(gid1).childNodes[0].textContent=value; 
+                    svgDoc.getElementById(gid2).childNodes[0].textContent='';
+                }
+                else
+                {
+                    var value=document.getElementById(screen_two_filed_one).value;
+                    var string1=value.substring(0,31);
+                    var string2=value.substring(31,60);
+                    var splitted = ((string1).split(" "));
+                    var paracount = splitted.length;
+                    str2 = string1.split(" ").pop();
+                    svgDoc.getElementById(gid1).childNodes[0].textContent=value.substring(0, string1.length - str2.length); 
+                    svgDoc.getElementById(gid2).childNodes[0].textContent=str2 + string2;
+                }
+            }
+        }
+        if(svgid==svg_seen3)
+        {
+            if(document.getElementById(screen_three_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Option 1';
+                svgDoc.getElementById(gid4).childNodes[1].textContent='';
+           // $.LoadingOverlay("hide"); 
+            }
+            else
+            {
+                var str=document.getElementById(screen_three_filed_one).value;
+                var res = str.trim().split(" ");
+                if(res[0]!='')
+                {
+                    svgDoc.getElementById(gid1).childNodes[0].textContent=res[0];
+                }
+                if(res[1]!='' || res[1]!=undefined)
+                {
+                    svgDoc.getElementById(gid4).childNodes[1].textContent= res[1];
+                }
+                else
+                {
+                    svgDoc.getElementById(gid4).childNodes[1].textContent='';
+                }
+            }
+            if(document.getElementById(screen_three_filed_two).value=='')
+            {
+                
+                svgDoc.getElementById(gid2).childNodes[1].textContent='Option 2'; 
+                svgDoc.getElementById(gid5).childNodes[1].textContent=''; 
+            // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                var str=document.getElementById(screen_three_filed_two).value;
+                var res = str.trim().split(" ");
+                if(res[0]!='')
+                {
+                    svgDoc.getElementById(gid2).childNodes[1].textContent=res[0];
+                }
+                if(res[1]!='' || res[1]!=undefined)
+                {
+                    svgDoc.getElementById(gid5).childNodes[1].textContent= res[1];
+                }
+                else
+                {
+                    svgDoc.getElementById(gid5).childNodes[1].textContent='';
+                }
+            // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_three_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid3).childNodes[0].textContent='Option 3'; 
+                svgDoc.getElementById(gid6).childNodes[1].textContent='';
+                 var svgid4svgobject = document.getElementById(svgid4);
+                var svgid4XMLobject = svgid4svgobject.contentDocument; 
+               
+                 svgid4XMLobject.getElementById(gid7).childNodes[1].textContent='Option 3';
+                svgid4XMLobject.getElementById(gid8).childNodes[1].textContent=''; 
+            // $.LoadingOverlay("hide");
+            }
+            else
+            {
+
+                var svgid4svgobject=document.getElementById(svgid4);
+                var svgid4XMLobject = svgid4svgobject.contentDocument;
+                var str=document.getElementById(screen_three_filed_three).value;
+                var res = str.trim().split(" ");
+               
+                if(res[0]!='')
+                {
+                    svgDoc.getElementById(gid3).childNodes[0].textContent=res[0];
+                    // alert(browser);
+                    if(browser=='Chrome'){}
+                        else
+                        {
+                          svgid4XMLobject.getElementById(gid7).childNodes[1].textContent=res[0];  
+                        }
+                    
+                }
+                if(res[1]!='' || res[1]!=undefined)
+                {
+
+                   svgDoc.getElementById(gid6).childNodes[1].textContent= res[1];
+                   svgid4XMLobject.getElementById(gid8).childNodes[1].textContent= res[1];
+                }
+                else
+                {
+                    svgDoc.getElementById(gid6).childNodes[1].textContent='';
+                    svgid4XMLobject.getElementById(gid8).childNodes[1].textContent='';
+                }
+            }
+
+        }
+        if(svgid==svg_seen4)
+        {
+            
+            if(document.getElementById(screen_three_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+                svgDoc.getElementById(gid2).childNodes[1].textContent=''; 
+                // $.LoadingOverlay("hide"); 
+            }
+            else
+            {
+                var str=document.getElementById(screen_three_filed_three).value;
+                var res = str.trim().split(" ");
+                if(res[0]!='')
+                {
+                    svgDoc.getElementById(gid1).childNodes[1].textContent=res[0];
+                }
+                if(res[1]!='' || res[1]!=undefined)
+                {
+                   svgDoc.getElementById(gid2).childNodes[1].textContent= res[1];
+                }
+                else
+                {
+                    svgDoc.getElementById(gid2).childNodes[1].textContent='';
+                }
+             // $.LoadingOverlay("hide");
+            }   
+        }
+        if(svgid==svg_seen5)
+        {
+            if(document.getElementById(screen_one_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+                // $.LoadingOverlay("hide");
+           }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_one_filed_one).value;
+            // $.LoadingOverlay("hide");
+            }  
+         }
+        if(svgid==svg_seen6)
+        {
+            if(document.getElementById('fileid').value=='')
+            {
+                 svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/productLogo.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+            }
+            if(document.getElementById(screen_six_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Title';
+                 // svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                 var svgid7svgobject = document.getElementById(gid2);
+                var svgid7XMLobject = svgid7svgobject.contentDocument;
+                svgid7XMLobject.getElementById(gid3).childNodes[0].textContent= 'Product Name'; 
+                 var svgid15svgobject = document.getElementById(gid4);
+                var svgid15XMLobject = svgid15svgobject.contentDocument;
+                svgid15XMLobject.getElementById(gid5).childNodes[1].textContent= 'Product Name'; 
+
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent=document.getElementById(screen_six_filed_one).value;
+                // svgDoc.querySelector(img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                var svgid7svgobject = document.getElementById(gid2);
+                var svgid7XMLobject = svgid7svgobject.contentDocument;
+                svgid7XMLobject.getElementById(gid3).childNodes[0].textContent= document.getElementById(screen_six_filed_one).value;
+                 var svgid15svgobject = document.getElementById(gid4);
+                var svgid15XMLobject = svgid15svgobject.contentDocument;
+                svgid15XMLobject.getElementById(gid5).childNodes[1].textContent= document.getElementById(screen_six_filed_one).value; 
+                // var svgid8svgobject = document.getElementById(svg_seen8);
+                // var svgid8XMLobject = svgid8svgobject.contentDocument;
+                // svgid8XMLobject.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                // $.LoadingOverlay("hide");
+            }
+
+
+         
+        }
+        if(svgid==svg_seen7)
+        {
+            var productname=document.getElementById(screen_six_filed_one).value;
+            if(productname=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent= 'Product Name';
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent=productname.substring(0, 20); 
+            }
+        }
+        if(svgid==svg_seen8)
+        {
+
+             if(document.getElementById('fileid').value=='')
+            {
+                 svgDoc.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/productLogo.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+            }
+            if(document.getElementById(screen_eight_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Add your solution';
+                svgDoc.getElementById(gid2).childNodes[0].textContent='here';
+                // svgDoc.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                var value=document.getElementById(screen_eight_filed_one).value;
+                if(value.length < 25)
+                {
+                    svgDoc.getElementById(gid1).style.fontSize = "40px";
+                    svgDoc.getElementById(gid1).childNodes[0].textContent=document.getElementById(screen_eight_filed_one).value;
+                     svgDoc.getElementById(gid2).childNodes[0].textContent='';
+                    // svgDoc.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                     // $.LoadingOverlay("hide");  
+                }
+                else
+                {
+
+                    var value=document.getElementById(screen_eight_filed_one).value;
+                    var string1=value.substring(0,24);
+                    var string2=value.substring(24,60);
+                    var splitted = ((string1).split(" "));
+                    var paracount = splitted.length;
+                     
+                    str2 = string1.split(" ").pop();
+                    svgDoc.getElementById(gid1).style.fontSize = "40px";
+                      svgDoc.getElementById(gid2).style.fontSize = "40px";
+                    svgDoc.getElementById(gid1).childNodes[0].textContent=value.substring(0, string1.length - str2.length); 
+                    svgDoc.getElementById(gid2).childNodes[0].textContent=str2 + string2;
+                   // svgDoc.querySelector(img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                }
+            }
+        }
+        if(svgid==svg_seen9)
+        {
+            if(document.getElementById(screen_nine_filed_one).value=='')
+            {
+               svgDoc.getElementById(gid1).childNodes[1].textContent='Add your key feature here';
+               // $.LoadingOverlay("hide"); 
+            }
+            else{
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_nine_filed_one).value;
+                 // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_nine_filed_two).value=='')
+            {
+                 svgDoc.getElementById(gid2).childNodes[1].textContent='Add your key feature here';
+                 // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(screen_nine_filed_two).value;
+                 // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_nine_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent='Add your key feature here';
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                 svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(screen_nine_filed_three).value;
+                  // $.LoadingOverlay("hide");
+            }
+           if(document.getElementById(screen_nine_filed_four).value=='')
+           {
+             svgDoc.getElementById(gid4).childNodes[1].textContent= 'Add your key feature here';
+             // $.LoadingOverlay("hide");
+           }
+           else
+           {
+            svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(screen_nine_filed_four).value;
+             // $.LoadingOverlay("hide");
+           }
+        }
+        if(svgid==svg_seen10)
+        {
+             if(document.getElementById('screen1id').value=='')
+            {
+                 svgDoc.querySelector(img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image2').src);
+            }
+            if(document.getElementById(screen_ten_filed_one).value=='')
+            {
+                 svgDoc.getElementById(gid1).childNodes[1].textContent= 'Place your text here';
+                 // $.LoadingOverlay("hide");
+            }
+            else
+            {
+               svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_ten_filed_one).value;
+                // svgDoc.querySelector(img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image2').src);
+                 // $.LoadingOverlay("hide"); 
+            }
+        }
+        if(svgid==svg_seen11)
+        {
+             if(document.getElementById('screen2id').value=='')
+            {
+                 svgDoc.querySelector(img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image3').src);
+            }
+           if(document.getElementById(screen_eleven_filed_one).value=='') 
+           {
+                svgDoc.getElementById(gid1).childNodes[1].textContent='Place your text here';
+            // $.LoadingOverlay("hide");
+           }
+           else
+           {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_eleven_filed_one).value;
+                // svgDoc.querySelector(img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image3').src);
+             // $.LoadingOverlay("hide");
+           }
+        }
+        if(svgid==svg_seen12)
+        {
+             if(document.getElementById('screen3id').value=='')
+            {
+                 svgDoc.querySelector(img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/placeholder_image.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image4').src);
+            }
+            if(document.getElementById(screen_twelve_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent='Place your text here';
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_twelve_filed_one).value;
+                // svgDoc.querySelector(img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image4').src);
+                 // $.LoadingOverlay("hide");
+            }
+        }
+        if(svgid==svg_seen13)
+        {
+            if(document.getElementById(screen_thirteen_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent='Add your key benefits here';
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[0].textContent=document.getElementById(screen_thirteen_filed_one).value;
+                 // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_thirteen_filed_two).value=='')
+            {
+                 svgDoc.getElementById(gid2).childNodes[0].textContent='Add your key benefits here';
+                 // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[0].textContent=document.getElementById(screen_thirteen_filed_two).value;
+                 // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_thirteen_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid3).childNodes[0].textContent='Add your key benefits here';
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+              svgDoc.getElementById(gid3).childNodes[0].textContent=document.getElementById(screen_thirteen_filed_three).value; 
+               // $.LoadingOverlay("hide"); 
+            }  
+        }
+        if(svgid==svg_seen14)
+        {
+            if(document.getElementById(screen_fourteen_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent='Add your contact details';
+                svgDoc.getElementById(gid2).childNodes[1].textContent='';
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                var str=document.getElementById(screen_fourteen_filed_one).value;
+                var res = str.trim().split(" ");
+                if(res[0]!='')
+                {
+                    svgDoc.getElementById(gid1).childNodes[1].textContent=res[0];
+                }
+                if(res[1]!='' || res[1]!=undefined)
+                {
+                   svgDoc.getElementById(gid2).childNodes[1].textContent= res[1];
+                }
+                else
+                {
+                    svgDoc.getElementById(gid2).childNodes[1].textContent='';
+                } 
+               // $.LoadingOverlay("hide");
+            } 
+        }
+        if(svgid==svg_seen15)
+        {
+             if(document.getElementById('fileid').value=='')
+            {
+                 svgDoc.querySelector(img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/productLogo.png');
+            }
+            else
+            {
+                 svgDoc.querySelector(img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+            }
+            if(document.getElementById(screen_fifteen_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent='Add your slogan here';
+                // svgDoc.querySelector(img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                // $.LoadingOverlay("hide");
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(screen_fifteen_filed_one).value;
+                // svgDoc.querySelector(img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('image1').src);
+                 // $.LoadingOverlay("hide");
+            }
+            if(document.getElementById(screen_six_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent='Product Name';  
+            }
+            else
+            {
+               svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(screen_six_filed_one).value;   
+            }
+            
+        }
+    
+    }
+
+    //end
+function validate(divid,pattern,errmsgid,titleid)
+{
+    
+    var regex =  pattern;
+    var input = document.getElementById(divid).value;
+    var isValid = regex.test(input);
+    if(isValid)
+        {
+
+            $(errmsgid).html("").show().fadeOut("slow");
+            return false;
+        }
+    else
+        {
+            $(errmsgid).html(titleid).show();
+            return false;
+        }
+ }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function ()
+  {
+    var $pagination = $('#produnct_explainer_navigation').simplePagination(
+    {
+        previous_content: '<i class="fa fa-arrow-left"></i>', 
+        next_content: '<i class="fa fa-arrow-right"></i>', 
+        number_of_visible_page_numbers: 1,
+        items_per_page: 1,
+        pagination_container: 'ul',
+        html_prefix: 'simple-pagination',
+        navigation_element: 'a', 
+    });
+
+   
+   
+   
+  });
+</script>
+<script type="text/javascript">
+   
+
+    $(window).load(function(){
+
+ $(".play-single").magnificPopup({
+        type: "iframe"
+    });
+ 
+});
+</script>
+<script type="text/javascript">
+window.onload = function ()
+{
+ 
+$(function(){ 
+    $('.form-control').keyup(function(){ 
+var size = parseInt($(this).attr('size')); 
+var chars = $(this).val().length; 
+if(chars >= size) $(this).attr('size', chars); 
+    }); 
+});
+ $(".cell-which-triggers-popup").click(function(e){
+        $("#popup").dialog({
+            
+        });
+      
+    });
+
+
+   
+}
+</script>
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+$('#open').click(function() {
+    $('#dialog').dialog('open');
+
+});
+
+
+
+$('#dialog').dialog({
+    autoOpen: false,
+    modal: false
+});
+
+// Close Pop-in If the user clicks anywhere else on the page
+             jQuery('html') //set for html for jsfiddle, but should be 'body'
+              .bind(
+               'click',
+               function(e){
+            if(
+             jQuery('#dialog').dialog('isOpen')
+             && !jQuery(e.target).is('.ui-dialog, a')
+             && !jQuery(e.target).closest('.ui-dialog').length
+            ){
+             jQuery('#dialog').dialog('close');
+            }
+               }
+              );
+
+});//]]> 
+
+</script>
+<body id='popupclose'>
+     <div id='PRODUCT' style="background-color: rgba(236, 181, 62, 0.95);">
+<h3>PRODUCT EXPLAINER INFORMATION</h3>
+<form id="contact-form" action="/prepareObject" method="post" enctype = "multipart/form-data" >
+<div id="produnct_explainer_navigation" style="width: 100%">
+  <div class="my-navigation" >
+        <div class="simple-pagination-first" ></div>
+        <div class="nav-wrap" style="margin-left: 2%">
+            <div class="simple-pagination-previous"  id='backward_btn'></div>
+            <div class="simple-pagination-page-numbers"  ></div>
+            <div class="simple-pagination-next"   id='forward_btn' ></div>
+        </div>
+         <div class="simple-pagination-last" style="margin-left:  2%"></div>
+  </div>
+
+<ul class="gallery" >
+
+  <div >
+
+    <div class="container">
+      
+ <% if(elem.TemplateDemoVideo ==''){ %>
+   
+ <% } else{ %>  
+                      <a href="<%= elem.TemplateDemoVideo %>" class="play-single" style="float: right;">Play demo video</a><br><% } %>  
+ <!--  <div id="dialog"> <object type="image/svg+xml" data="/images/svg files/Scene_01.svg" id='svgObject' onload="details(this.id,svg_seen1_id1,svg_seen1_id2);">
+    </object> </div>
+<a href="#" id="open" style="float: right;">Preview</a><br> -->
+<!-- <div id="popup" data-name="name" class="dialog" style=" width:100%;">
+    <object type="image/svg+xml" data="/images/svg files/Scene_01.svg" id='svgObject' onload="details(this.id,svg_seen1_id1,svg_seen1_id2);">
+    </object>         
+</div> -->
+
+<!-- <table border="1" style="float: right;">
+    <tr>
+        <td class="cell-which-triggers-popup">Preview</td>
+    </tr> 
+</table><br><br> -->
+<!-- <svg id="mySVG" xmlns:xlink="http://www.w3.org/1999/xlink" height="400" width="300" style="border: 1px solid black"></svg> -->
+<!-- <div style="margin-top: 1em">
+    
+    1<input id="price" type="range" min="1" max="360" value="50" step="10"/>360
+</div>
+
+<p id="result"></p> -->
+
+<!-- <object data="graphics.svg" type="image/svg+xml" id="graphics" />
+<script>
+  document.getElementById('graphics').addEventListener('mouseMove',function(){
+    alert("22");
+    var svg = document.getElementById('graphics').contentDocument
+    // do stuff, call functions, etc.
+  // })
+</script> -->
+      <p>Meet
+
+      <input id="characterName" type="text" class="form-control " name="characterName" 
+              pattern="[A-Za-z\s]{2,20}"
+              placeholder="Your customer name" value="" title="Character Name should be min length of 2 and max length of 20 from A-Z,a-z" required  onchange="details('svgObject',svg_seen1_id1,svg_seen1_id2,'svgObject4',svg_seen5_id1,svg_seen5_id2);validate(this.id,/^[A-Za-z\s]{2,20}$/,'#errmsg',this.title);" ><br><span id="errmsg" class='errmsg'></span>
+              <br>
+      He's a   <input 
+              id="characterProfession" 
+              type="text" 
+              class="form-control" 
+              name="characterProfession" 
+              pattern="[A-Za-z\s]{2,20}"
+              placeholder="Your customer profession" 
+              title="Character profession should be min length of 2 and max length of 20 with A-Z, a-z" required onchange="details('svgObject',svg_seen1_id1,svg_seen1_id2);validate(this.id,/^[A-Za-z\s]{2,20}$/,'#errmsg1',this.title);" ></p><br><span id="errmsg1" class='errmsg'></span>
+              
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_01.svg" id='svgObject' onload="details(this.id,svg_seen1_id1,svg_seen1_id2);" >
+    </object>
+  
+  </div>
+  <div >
+    <div class="container"  >
+      <p><label for="email">He's struggling to </label>
+      <input
+              id="problemStatement" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="problemStatement" 
+              pattern="[A-Za-z0-9\s]{2,60}"
+              placeholder="problem of your customer " 
+              title="Characters should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject1',svg_seen2_id1,svg_seen2_id2);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg2',this.title);"> <br><span id="errmsg2" class='errmsg'></span>
+      </p></div><br>
+      <object type="image/svg+xml" data="/images/svg files/Scene_02.svg" id='svgObject1' onload="details(this.id,svg_seen2_id1,svg_seen2_id2)"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+      <p>He has explored 
+      <label for="your-message">every option</label> available</p>
+      <p> <input 
+              id="exploredOption1" 
+              type="text" 
+              class="form-control" 
+              name="exploredOption1" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="First option" 
+              title="Option should be min length of 5 and max length of 20 with A-Za-z" required onchange="details('svgObject2',svg_seen3_id1,svg_seen3_id2,svg_seen3_id3,svg_seen3_id1_1,svg_seen3_id2_1,svg_seen3_id3_1);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#errmsg4',this.title);"><br><span id="errmsg4" class='errmsg'></span><br>
+      <input 
+              id="exploredOption2" 
+              type="text" 
+              class="form-control" 
+              name="exploredOption2" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Second option" 
+              title="Option should be min length of 2 and max length of 20 with A-Za-z" required  onchange="details('svgObject2',svg_seen3_id1,svg_seen3_id2,svg_seen3_id3,svg_seen3_id1_1,svg_seen3_id2_1,svg_seen3_id3_1);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#errmsg5',this.title);"><br><span id="errmsg5" class='errmsg'></span><br>
+      <input 
+              id="exploredOption3" 
+              type="text" 
+              class="form-control" 
+              name="exploredOption3" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Third option" 
+              title="Option should be min length of 2 and max length of 10 with A-Za-z" required  onchange="details('svgObject2',
+              svg_seen3_id1,svg_seen3_id2,svg_seen3_id3,svg_seen3_id1_1,svg_seen3_id2_1,svg_seen3_id3_1,svg_seen4_id,svg_seen4_id1_1,'svgObject3');validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#errmsg6',this.title);"><br><span id="errmsg6" class='errmsg'></span>
+
+        </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_03.svg" id='svgObject2' onload="details(this.id,svg_seen3_id1,svg_seen3_id2,svg_seen3_id3,svg_seen3_id1_1,svg_seen3_id2_1,svg_seen3_id3_1,svg_seen4_id,svg_seen4_id1_1,'svgObject3');"></object>
+  </div>
+
+  <div>
+   <object type="image/svg+xml" data="/images/svg files/Scene_04.svg" id='svgObject3' onload="details(this.id,svg_seen4_id,svg_seen4_id1_1);"></object>
+  </div>
+
+  <div>
+    <object type="image/svg+xml" data="/images/svg files/Scene_05.svg" id='svgObject4' onload="details(this.id,svg_seen5_id1,svg_seen5_id2);"></object>
+  </div>
+
+  <div>
+
+    <div class="container" >
+      <p>  <input 
+              id="productName" 
+              type="text" 
+              class="form-control" 
+              name="productName" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your product name" 
+              title="Product name should be min length of 2 and max length of 20 with A-Za-z" required  onchange="details('svgObject5',svg_seen6_id1,'svgObject6',svg_seen7_id1,'svgObject14',svg_seen15_id2);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#errmsg7',this.title);"><br><span id="errmsg7" class='errmsg'></span><br>
+
+      Product logo
+      <input 
+              type="file" 
+              class="btn btn-default btn-file col-xs-12" id='fileid' 
+              name="productLogo" required onclick='readURL(this,0,this.id);' onchange="readURL(this,0,this.id);"><br><span id="errmsg21" class='errmsg'></span><br>
+            </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_06.svg" id='svgObject5' onload="details(this.id,svg_seen6_id1);"></object>
+    <div id="loader"></div>
+    <img  id="image1" src="/images/productLogo.png"   style="display: none;"/>
+
+  </div>
+  <div>
+    <object type="image/svg+xml" data="/images/svg files/Scene_07.svg" id='svgObject6' onload="details(this.id,svg_seen7_id1);"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+      It solves by  <input
+              id="solutionOffered" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="solutionOffered" 
+              placeholder="Provide the solution offered"
+              pattern="[A-Za-z\s]{2,60}"
+        title="About should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject7',svg_seen8_id1,svg_seen8_id2);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg9',this.title);"> <br><span id="errmsg9" class='errmsg'></span>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_08.svg" id='svgObject7' onload="details(this.id,svg_seen8_id1,svg_seen8_id2);"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+      <p>Here are the main key features</p>
+      <p> 
+        <input 
+              id="keyFeature1" 
+              type="text"
+              size="20" 
+              class="form-control" 
+              name="keyFeature1" 
+              placeholder="First key feature"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject8',
+              svg_seen9_id1,svg_seen9_id2,svg_seen9_id3,svg_seen9_id4);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg10',this.title);"><br><span id="errmsg10" class='errmsg'></span><br>
+    
+      <input 
+              id="keyFeature2" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="keyFeature2" 
+              placeholder="Second key feature"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject8',
+              svg_seen9_id1,svg_seen9_id2,svg_seen9_id3,svg_seen9_id4);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg11',this.title);"><br><span id="errmsg11" class='errmsg'></span><br>
+        <input 
+              id="keyFeature3" 
+              type="text" 
+              class="form-control"
+              size='20' 
+              name="keyFeature3" 
+              placeholder="Third key feature"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject8',
+              svg_seen9_id1,svg_seen9_id2,svg_seen9_id3,svg_seen9_id4);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg12',this.title);"><br><span id="errmsg12" class='errmsg'></span><br>
+
+      <input 
+              id="keyFeature4" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="keyFeature4" 
+              placeholder="Fourth key feature"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z" required  onchange="details('svgObject8',
+              svg_seen9_id1,svg_seen9_id2,svg_seen9_id3,svg_seen9_id4);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg13',this.title);"><br><span id="errmsg13" class='errmsg'></span><br></p>
+    </div><br>
+     <object type="image/svg+xml" data="/images/svg files/Scene_09.svg" id='svgObject8' onload="details(this.id,svg_seen9_id1,svg_seen9_id2,svg_seen9_id3,svg_seen9_id4);"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+      <p> Product demo screen one
+      <input type="file" id='screen1id' class="btn btn-default btn-file col-xs-12" name="screen1" required onclick='readURL(this,1,this.id);' onchange="readURL(this,1);"><br><span id="errmsg22" class='errmsg'></span><br>
+      About the demo screen 
+      <input id="screen1Text" type="text" 
+              class="form-control" 
+              size='20'
+              name="screen1Text" 
+              placeholder="About the screen"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required  onchange="details('svgObject9',
+              svg_seen10_id1);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg14',this.title);"><br><span id="errmsg14" class='errmsg'></span><br> </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_10.svg" id='svgObject9' onload="details(this.id,svg_seen10_id1);"></object>
+   <img  id="image2" src="/images/placeholder_image.png"   style="display: none;"/>
+  </div>
+
+  <div>
+    <div class="container"  >
+      <p> Product demo screen two
+      <input type="file" id='screen2id' class="btn btn-default btn-file col-xs-12" name="screen2" required  onclick='readURL(this,2,this.id);'onchange="readURL(this,2);"><br><span id="errmsg23" class='errmsg'></span><br>
+      About the demo screen two
+      <input id="screen2Text" type="text" 
+              class="form-control" 
+              size='20'
+              name="screen2Text" 
+              placeholder="About the screen"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required onchange="details('svgObject10',
+              svg_seen11_id1);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg15',this.title);"><br><span id="errmsg15" class='errmsg'></span> </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_11.svg" id='svgObject10' onload="details(this.id,svg_seen11_id1);"></object>
+      <img  id="image3" src="/images/placeholder_image.png"   style="display: none;"/>
+  </div>
+
+  <div>
+   <div class="container"  >
+      <p> Product demo screen three
+      <input type="file" id='screen3id' class="btn btn-default btn-file col-xs-12" name="screen3" required onclick='readURL(this,3,this.id);' onchange="readURL(this,3);"><br><span id="errmsg24" class='errmsg'></span><br>
+      About the demo screen three
+      <input id="screen3Text" type="text" 
+              class="form-control"
+              size='20' 
+              name="screen3Text" 
+              placeholder="About the screen"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required onchange="details('svgObject11',
+              svg_seen12_id1);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg16',this.title);"><br><span id="errmsg16" class='errmsg'></span><br> </p>
+    </div><br>
+     <object type="image/svg+xml" data="/images/svg files/Scene_12.svg" id='svgObject11' onload="details(this.id,svg_seen12_id1);"></object>
+      <img  id="image4" src="/images/placeholder_image.png"   style="display: none;"/>
+  </div>
+
+  <div>
+      <div class="container"  >
+        <p> Adding to that now, He could also have</p>
+  
+        <input 
+              id="benefit1" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="benefit1" 
+              placeholder="First benefit"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required  onchange="details('svgObject12',
+              svg_seen13_id1,svg_seen13_id2,svg_seen13_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg17',this.title);"><br><span id="errmsg17" class='errmsg'></span><br>
+        <input 
+              id="benefit2" 
+              type="text" 
+              class="form-control"
+              size='20' 
+              name="benefit2" 
+              placeholder="Second benefit"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required  onchange="details('svgObject12',
+              svg_seen13_id1,svg_seen13_id2,svg_seen13_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg18',this.title);"><br><span id="errmsg18" class='errmsg'></span><br>
+        <input 
+              id="benefit3" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="benefit3" 
+              placeholder="Third benefit"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="About should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required  onchange="details('svgObject12',
+              svg_seen13_id1,svg_seen13_id2,svg_seen13_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#errmsg19',this.title);"><br><span id="errmsg19" class='errmsg'></span><br>
+      </div><br>
+      <object type="image/svg+xml" data="/images/svg files/Scene_13.svg" id='svgObject12' onload="details(this.id,svg_seen13_id1,svg_seen13_id2,svg_seen13_id3);"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+     <p>Want to know more <input 
+              id="contactDetails" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="contactDetails" 
+              placeholder="Add your contact details"
+              pattern="[A-Za-z0-9.!@#\$%\^\&*\s]{2,60}"
+             title="contactDetails should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required onchange="details('svgObject13',
+              svg_seen14_id1,svg_seen14_id1_1);validate(this.id,/^[A-Za-z0-9.!@#\$%\^\&*\s]{2,60}$/,'#errmsg20',this.title);"><br><span id="errmsg20" class='errmsg'></span><br>
+     </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/svg files/Scene_14.svg" id='svgObject13' onload="details(this.id,svg_seen14_id1,svg_seen14_id1_1);"></object>
+  </div>
+
+ <div>
+      Product tagline <input 
+              id="slogan" 
+              type="text" 
+              class="form-control"
+              size='20' 
+              name="slogan" 
+              placeholder="Provide your Tagline"
+              pattern="[A-Za-z\s]{2,60}"
+title="Slogan should be min length of 2 and max length of 60 with A-Za-z0-9.*&:" required  onchange="validate(this.id,/^[A-Za-z\s]{2,60}$/,'#errmsg8',this.title);details('svgObject14',svg_seen15_id1,svg_seen15_id2);"><br><span id="errmsg8" class='errmsg'></span> <br>
+<input id="TemplateName" type="text" class="form-control" name="TemplateName" style="display:none" value="ProductExplainer">
+<input id="aepfile" type="text" class="form-control" name="AEP_File" style="display:none" value="Male_Female.aep">
+<input id="target" type="text" class="form-control" name="target" style="display:none" value="template_01">
+  <div align="center" > 
+      <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button>
+    </div> 
+     <object type="image/svg+xml" data="/images/svg files/Scene_15.svg" id='svgObject14' onload="details(this.id,svg_seen15_id1,svg_seen15_id2);"></object>
+    
+  </div>
+</ul>   
+</div>
+</form>
+<!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="../../js/index.js"></script> -->
+</div>   
+    
+
+
+
+
+
+</body>
+</html>
+
+

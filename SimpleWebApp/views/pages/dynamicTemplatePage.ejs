@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+  <title>Template Creation</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body style="  background: url(./images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+ ">
+  <div class="container-fluid  row" style="margin-top:">
+    <div class="col-md-3"></div>
+       <!-- <form  enctype="multipart/form-data" action="api/Upload/" method="post">
+        <input type="file" name="imgUploader" multiple />
+        <input type="submit"   /> </form> -->
+<form class="col-md-6" action="/createTemplate" method="post" enctype="multipart/form-data">
+  <!-- <div class="form-group">
+    <label for="exampleFormControlSelect1">Select parent template</label>
+    <select class="form-control" name='TemplateParentName'>
+       <option>Select parent template </option>
+      <option>Product</option>
+      <option>Web</option> -->
+      <!-- <option>companyProfile</option> -->
+     <!--  <option>4</option>
+      <option>5</option> -->
+   <!--  </select>
+  </div> -->
+  <div class="form-group">
+    <label for="">Template Name</label>
+    <input type="text" class="form-control" id="templateName" name='TemplateName' placeholder="Enter your template name">
+  </div>
+  <div class="form-group">
+    <label for="">AEP File Name</label>
+    <input type="text" class="form-control" id="templateAEPFile" name='TemplateAEPFile' placeholder="Enter your template AEPFile">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select redirect url</label>
+    <select class="form-control" name='TemplateRedirectFileName'>
+       <option>Select template redirecturl</option>
+      <option>productExplainer</option>
+      <option>webWalkthrough</option>
+      <option>companyProfile</option>
+      <option>Wedding invitation</option>
+      <option>Logo creation</option>
+     <!--  <option>4</option>
+      <option>5</option> -->
+    </select>
+  </div>
+  <!-- <div class="form-group">
+    <label for="">Redirect file name</label>
+    <input type="text" class="form-control" id="templateredirectFileName" name='TemplateRedirectFileName' placeholder="Enter redirect file name">
+  </div> -->
+  <div class="form-group">
+    <label for="">Icon</label>
+    <input type="file" class="form-control-file" id="TemplateIcon" name='TemplateIcon' >
+  </div>
+  <div class="form-group">
+    <label for="">Icon class width</label>
+    <input type="text" class="form-control" id="" name='TemplateIconClassWidth' >
+  </div>
+  <div class="form-group">
+    <label for="">Icon class height</label>
+    <input type="text" class="form-control" id="" name='TemplateIconClassHeigth' >
+  </div>
+  <div class="form-group">
+    <label for="">Demo video URl</label>
+    <input type="text" class="form-control" id="" name='TemplateDemoVideo' >
+  </div>
+  <div class="form-group">
+    <label for="">Template Subtitle</label>
+    <input type="text" class="form-control" id="" name='TemplateSubtitle' >
+  </div>
+  <div class="form-group">
+    <label for="">Template</label>
+    <input type="file" class="form-control" id="" name='TemplateRedirectFile' >
+  </div>
+ <div class="form-group">
+    <label for="exampleFormControlFile1">Choose image</label>
+    <input type="file" class="form-control-file" id="templateImage" name="TemplateImage">
+  </div>
+  <button type="submit" class="btn btn-primary pull-right">Submit</button>
+</form>
+</div>
+</body>
+</html>

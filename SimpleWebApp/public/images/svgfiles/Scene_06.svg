@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1084" style="enable-background:new 0 0 1920 1084;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#62ACAB;}
+	.st1{fill:none;stroke:#FDFFFE;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#C79365;stroke-width:5;stroke-miterlimit:10;}
+	.st3{fill:#F7F9F9;}
+	.st4{font-family:'SegoeUI-Bold';}
+	.st5{font-size:48px;}
+</style>
+<g id="Layer_1_2_">
+	<g id="Layer_1_1_">
+		<title>template_1_preview_5</title>
+		<g id="bg">
+			<rect class="st0" width="1920" height="1084"/>
+		</g>
+		<g id="circle">
+			<circle class="st1" cx="666.5" cy="542.5" r="132"/>
+		</g>
+		<g id="yellow_line">
+			<line class="st2" x1="837.5" y1="399" x2="838.5" y2="671.5"/>
+		</g>
+		<g id="Layer_5">
+			<text transform="matrix(1 0 0 1 848.84 543.26)" class="st3 st4 st5">That is when he heard of </text>
+			<text transform="matrix(1 0 0 1 1314.75 543.26)" class="st3 st4 st5"> </text>
+			<text id="tspan1" transform="matrix(1 0 0 1 1014.76 600.8596)" class="st3 st4 st5">Title</text>
+		</g>
+	</g>
+	<g id="Layer_2">
+	</g>
+</g>
+<g id="Layer_2_1_">
+	
+		<image style="overflow:visible;enable-background:new    ;" width="250" height="250" id="logo1" xlink:href="productLogo.png"  transform="matrix(0.7094 0 0 0.752 578.6378 444)">
+	</image>
+</g>
+</svg>

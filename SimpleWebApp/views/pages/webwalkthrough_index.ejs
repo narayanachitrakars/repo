@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <link href="/css/Sidebar.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/d3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0b1.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src='/js/firebase.js'></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.3.0.js"></script>
+
+    
+      <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  <style type="text/css">
+  #trxpop{
+    display:none;
+}
+  .image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    <!-- width: 80px; -->
+    cursor: pointer;
+}
+   ul {
+            padding-left: 0px !important;
+        }
+
+        
+
+        #headingOne a, #headingTwo a, #headingThree a {
+            font-size: 14px;
+            text-decoration: none !important;
+        }
+  @font-face {
+    font-family: 'Font1'; /*a name to be used later*/
+    src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
+}
+ #owl-demo .item img {
+  display: block;
+  width: 100%;
+  height: auto; 
+}
+.owl-theme .owl-controls {
+  position: relative; 
+}
+  .owl-theme .owl-controls .owl-page {
+    position: relative;
+    display: inline-block;
+    width: 6em;
+    height: 3em;
+    margin: 0 .25em;
+    outline: none;
+    transition: all .1s ease-in-out; }
+    .owl-theme .owl-controls .owl-page:focus {
+      outline: none; }
+    .owl-theme .owl-controls .owl-page span {
+      display: none; }
+    .owl-theme .owl-controls .owl-page.active {
+      transform: scale(1.1); }
+    .owl-theme .owl-controls .owl-page:not(.active) {
+      transform: scale(0.8);
+      -webkit-box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0 0 10em 0 rgba(0, 0, 0, 0.75); }
+      .owl-theme .owl-controls .owl-page:not(.active):hover {
+        transform: scale(0.9); }
+  .owl-theme .owl-controls .owl-buttons .owl-prev, .owl-theme .owl-controls .owl-buttons .owl-next {
+    font-size: 2em;
+    display: block;
+    position: absolute;
+    top: 0;
+    line-height: .75em;
+    width: 1em;
+    height: 1em;
+    border-radius: 1px;
+    background-color: #c0c0c0; }
+    .owl-theme .owl-controls .owl-buttons .owl-prev:focus, .owl-theme .owl-controls .owl-buttons .owl-next:focus {
+      -webkit-box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, 0.75);
+      box-shadow: inset 0 0 10em 0 rgba(255, 0, 0, 0.75); }
+  .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: .25em; }
+  .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: .25em; }
+
+
+.default  {font-family:"Times New Roman"}
+
+.font1{
+   font-family: 'Oswald', sans-serif;
+}
+
+.font2 {
+    font-family: "Comic Sans MS", cursive;
+}
+   .class1 {
+    border-radius: 10%;
+    border: 2px solid #efefef;
+  }
+
+  .class2 {
+    opacity: 0.5;
+  }
+*{margin:0;}
+html, body{
+  height:100%;
+}
+
+#wrapper{
+  position:absolute;
+  width:100%;
+  bottom:0;
+  top:50px; /* compensate #top height */ 
+}
+#left{
+  position:absolute;
+  background: #3BB3C3;
+  height:100%;
+  width:80%;   /* See #right left value */
+  overflow:auto; /* make scrollable if content overflows */
+}
+#right{
+  position:absolute;
+  right:0;
+  left:80%; /* compensate #left width */
+  bottom:0;
+  height:100%;
+  background:#EE9B69;
+}
+#right1{
+  position:absolute;
+  right:0;
+  left:80%; /* compensate #left width */
+  bottom:0;
+  height:100%;
+  background:#EE9B69;
+}
+#header{
+  position:fixed;
+  width:100%;   /* (100% cause of fixed pos) */
+  height:30px;  /* see #page top value */
+  background:#F8C301;
+}
+  </style>
+
+<script >
+  var currentIndex;
+  var editor_object;
+  var browser;
+  var charlen;
+  
+  $(function()
+  {
+    $(document).ready(function ()
+    {
+      $("#dialog").dialog({
+     autoOpen: false,
+     modal: true,
+     buttons : {
+          "Save" : function() {
+              var seqno=document.getElementById('seq1').value;
+    var start_time=document.getElementById('seq1_start_time_id').value;
+    var start_time_millsec='000';
+    var end_time_millsec='000';
+    var end_time=document.getElementById('seq1_end_time_id').value;
+    var sentense=document.getElementById('seq1_sentense_id').value;
+    
+    var seqno2=document.getElementById('seq2').value;
+    var start_time2=document.getElementById('seq2_start_time_id').value;
+    var end_time2=document.getElementById('seq2_end_time_id').value;
+    var start_time_millsec2='000';
+    var end_time_millsec2='000';
+    var sentense2=document.getElementById('seq2_sentense_id').value;
+
+    var seqno3=document.getElementById('seq3').value;
+    var start_time3=document.getElementById('seq3_start_time_id').value;
+    var end_time3=document.getElementById('seq3_end_time_id').value;
+    var start_time_millsec3='000';
+    var end_time_millsec3='000';
+    var sentense3=document.getElementById('seq3_sentense_id').value;
+
+       document.getElementById('output').innerHTML=seqno+'\n'+start_time+','+start_time_millsec +' '+'-->'+' '+end_time+','+end_time_millsec+'\n'+sentense+'\n\n'+seqno2+'\n'+start_time2 +','+start_time_millsec2 +' '+'-->'+' '+end_time2+','+end_time_millsec2+'\n'+sentense2+'\n\n'+seqno3+'\n'+start_time3 +','+start_time_millsec2 +' '+'-->'+' '+end_time3+','+end_time_millsec3+'\n'+sentense3;
+      
+      
+       document.getElementById('dynamica_srtfile').value=seqno+'@'+start_time+','+start_time_millsec +' '+'-->'+' '+end_time+','+end_time_millsec+'@'+sentense+'@@'+seqno2+'@'+start_time2 +','+start_time_millsec2 +' '+'-->'+' '+end_time2+','+end_time_millsec2+'@'+sentense2+'@@'+seqno3+'@'+start_time3 +','+start_time_millsec2 +' '+'-->'+' '+end_time3+','+end_time_millsec3+'@'+sentense3; 
+        init();  
+        $(this).dialog("close");         
+          },
+          "Cancel" : function() {
+            $(this).dialog("close");
+          }
+        },
+        resizable: false,
+    draggable: true,
+    stack: true,
+    closeOnEscape: true,
+    zIndex: 1320,
+    width: 350
+      });
+
+  $("#callConfirm").on("click", function(e) {
+      e.preventDefault();
+      $("#dialog").dialog("open");
+  });
+
+  
+
+            $.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
+            if($.browser.chrome)
+            {
+                browser='Chrome';
+                $.browser.safari = false;
+            }
+            if($.browser.safari)
+            {
+                browser='Safari';
+            }
+            if($.browser.mozilla)
+            {
+                browser='mozilla';
+            }
+            if(browser=='mozilla')
+              {
+             console.log(browser);
+               $("#player").attr('width','100%');
+                $("#editImagetoVideo").attr('width','100%');
+               
+              }
+              
+             else {
+                console.log(browser);
+             $("#player").attr('width', "80%");
+             // $("#player").attr('height','600px');
+             $("#editImagetoVideo").attr('width', "100%");
+           }
+            $('#video_upload_id').css({'display':'none'});
+                  $('#videolabel').css({'display':'none'});
+                  $('#video_file_upload').css({'display':'none'});
+   
+ $("a#downloaded").click(function()
+                {
+                    var text='1 00:00:00,100 --> 00:00:01,500 For www.forom.com 2 00:00:01,500 --> 00:00:02,500 Tonights the night. 3 00:00:03,000 --> 00:00:15,000 And its going to happen again and again';
+                    var first_line=text.substring(0,1);
+                    var second_line=text.substring(2,31);
+                    var third_line=text.substring(32,49);
+                    var fourth_line=text.substring(50,51);
+                    var fifth_line=text.substring(52,81);
+                    var six_line=text.substring(82,101);
+                    var seventh_line=text.substring(102,103);
+                    var eight_line=text.substring(104,133);
+                    var nine_line=text.substring(134,173);
+                    text=first_line+"\r\n"+second_line+"\r\n"+third_line+"\r\n\r\n\r\n"+fourth_line+"\r\n"+fifth_line+"\r\n"+six_line+"\r\n\r\n\r\n"+seventh_line+"\r\n"+eight_line+"\r\n"+nine_line;
+
+                    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(text);
+                    this.setAttribute('download','sample.srt');
+                    document.getElementById("ptag_for_subtitle").style.display='inline-block';
+                    document.getElementById("downloaded").style.display='none';
+                });
+editor_object=$('.click2edit').summernote({
+  toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    // ['para', ['ul', 'ol', 'paragraph']],
+    // ['height', ['height']]
+  ]
+});
+
+
+
+/// on text edit
+
+
+ $('.click2edit').on('summernote.change', function() {
+ 
+ var textValue = $('#summernote').summernote('code');
+
+ // var plainText = $(textValue).text();
+ 
+ if(editor_object[0].attributes.customAttr !=undefined )
+ {
+  console.log(textValue);
+  var updated_textValue=textValue.replace(/<[^>]*>/g, "");
+  // if(plainText !=''){
+  //   document.getElementById(editor_object[0].attributes.customAttr.value).innerHTML=plainText;
+  //    document.getElementById(editor_object[0].attributes.customAttr1.value).value=plainText;
+  // }
+  // else
+  // {
+    document.getElementById(editor_object[0].attributes.customAttr.value).innerHTML=updated_textValue;
+  document.getElementById(editor_object[0].attributes.customAttr1.value).value=updated_textValue;
+  // }
+  
+
+ }
+      });
+
+ $('#summernote').on('summernote.keydown', function(we, e) {
+ 
+
+
+ // var length = e.currentTarget.innerText.replace(/(<([^>]+)>)/ig, "").replace(/( )/, " ").length;
+
+
+                            var t = e.currentTarget.innerText; 
+                            console.log(t);
+                            if (t.trim().length > charLength ) {
+                                //delete key
+                                    if (e.keyCode != 8){
+                                    e.preventDefault(); 
+                                     }
+                                    validateError(charLength);
+                            } 
+                                  else{
+                                          validPass();
+                                        }
+                        }),
+
+
+  $('#summernote').on('summernote.keyup', function(we, e) {
+    
+                            var t = e.currentTarget.innerText;
+                             if(t.trim().length > charLength){
+                                  validateError(charLength);
+                                       }
+                                       else{
+                                        validPass();
+                                       }
+                          
+                        }),
+
+$('.click2edit').on('summernote.paste', function(ev, e) {
+ 
+        console.log(bufferText.length);
+                        var maxPaste = bufferText.length;
+                      var t = e.currentTarget.innerText;
+                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                        e.preventDefault();
+                        var maxPaste = bufferText.length;
+                        if(t.length + bufferText.length > charLength){
+                            maxPaste = charLength - t.length;
+                            validateError(charLength);
+                        }
+                        else{
+                          validPass();
+                        }
+                        if(maxPaste > 0){
+                           validateError();
+                          //  document.execCommand('insertText', false, bufferText.substring(0, 25)); //showing remaing charcters
+                            document.execCommand('insertText', false, "");///emty text while paste 
+                            
+                        }
+                   
+});
+/// diable swipe for owl pages adhi
+$(".disable-owl-swipe").on("touchstart mousedown", function(e) {
+  console.log("swipe");
+    // Prevent carousel swipe
+    e.stopPropagation();
+})
+    $("#owl-demo").owlCarousel({
+        navigation: false,
+        navigationText: ['&lsaquo;','&rsaquo;'],
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true,
+        afterInit: makePages,
+        afterUpdate: makePages
+    });
+
+    function makePages() {
+        $.each(this.owl.userItems, function(i) {
+
+          if(i==0){
+            $('#panel_image_div').css({'display':'none'});
+            $('#focus_id').css({'display':'none'});
+             $('#video_upload_id').css({'display':'none'});
+              $('#subtitle_upload_id').css({'display':'none'});
+              $('#callConfirm').css({'display':'none'});
+            $('#stock_images_div').css({'display':'none'});
+            $('#bg_div').css({'display':'none'});
+          }
+          
+
+            $('.owl-controls .owl-page').eq(i)
+                .css({
+                    'background': "url('/images/Web Walkthrough/thumbnails/" +i+ ".png')",
+                    'background-size': 'cover'
+                })
+        });
+    }
+
+$('.owl-page').click(function(event) {
+     currentIndex = $('div.active').index();
+     validPass();
+       $('.box-2').css({'display':'none'}); 
+  $('.box').css({'display':'none'});
+      if(currentIndex==0){
+        $('#summernote_textarea').css({'display':'block'});
+        $('#focus_id').css({'display':'none'});
+            $('#panel_image_div').css({'display':'none'});
+            $('#video_upload_id').css({'display':'none'});
+             $('#subtitle_upload_id').css({'display':'none'});
+             $('#callConfirm').css({'display':'none'});
+            $('#stock_images_div').css({'display':'none'});
+            $('#bg_div').css({'display':'none'});
+            $('#right').css({'display':'block'});
+          }
+     if(currentIndex==1){
+      $('#summernote_textarea').css({'display':'block'});
+            $('#panel_image_div').css({'display':'block'});
+            $('#video_upload_id').css({'display':'none'});
+             $('#subtitle_upload_id').css({'display':'none'});
+             $('#callConfirm').css({'display':'none'});
+            $('#stock_images_div').css({'display':'block'});
+            $('#bg_div').css({'display':'block'});
+            $('#right').css({'display':'block'});
+          }
+          if(currentIndex==2){
+            $('#summernote_textarea').css({'display':'none'});
+             $('#focus_id').css({'display':'block'});
+            $('#panel_image_div').css({'display':'none'});
+            $('#video_upload_id').css({'display':'none'});
+             $('#subtitle_upload_id').css({'display':'none'});
+             $('#callConfirm').css({'display':'none'});
+            $('#stock_images_div').css({'display':'none'});
+            $('#bg_div').css({'display':'none'});
+            
+          }
+          if(currentIndex==3){
+            $('#summernote_textarea').css({'display':'block'});
+            $('#focus_id').css({'display':'none'});
+            $('#panel_image_div').css({'display':'block'});
+            $('#video_upload_id').css({'display':'none'});
+            $('#subtitle_upload_id').css({'display':'none'});
+            $('#callConfirm').css({'display':'none'});
+            $('#stock_images_div').css({'display':'block'});
+            $('#bg_div').css({'display':'block'});
+          }
+          if(currentIndex==4){
+            $('#summernote_textarea').css({'display':'block'});
+            $('#focus_id').css({'display':'none'});
+            $('#video_upload_id').css({'display':'block'});
+            $('#subtitle_upload_id').css({'display':'block'});
+            $('#callConfirm').css({'display':'block'});
+            $('#panel_image_div').css({'display':'none'});
+            $('#stock_images_div').css({'display':'none'});
+            $('#bg_div').css({'display':'none'});
+          }
+   editor_object.removeAttr('customAttr');
+    $('.click2edit').summernote('reset'); 
+})
+
+});
+});//]]> 
+    var full_url = document.URL
+
+    var url_id = full_url.substring(full_url.lastIndexOf('/') + 1);
+    var config = {
+    apiKey: "AIzaSyCZWa5wChnendahT6sTdfNJhmFbnI8Cz5g",
+    authDomain: "productexplainer.firebaseapp.com",
+    databaseURL: "https://productexplainer.firebaseio.com",
+    projectId: "productexplainer",
+    storageBucket: "productexplainer.appspot.com",
+    messagingSenderId: "350462790215"
+};
+
+firebase.initializeApp(config);
+var messaging = firebase.messaging();
+messaging.onMessage((notif) => {
+     var title=notif.notification.title;
+var options ={
+body:notif.notification.body,
+icon:notif.notification.icon
+}
+noti= new Notification(title, options);
+ });
+
+window.onload=function() {
+    document.getElementById("input-font").onchange=function() {
+    var className = this.value;
+    if (className) document.getElementById("output-text").className = className;
+  }
+}    
+ function svgdetails(svg_circle_id,svg_circle_id2)
+            {
+                document.getElementById(svg_circle_id).style.display='none';
+                // document.getElementById(svg_circle_id2).style.display='none';  
+            }
+             function imageEditClick(event){
+
+
+
+
+  $('#video_upload_id').css({'display':'block'});
+  $('#videolabel').css({'display':'table'});
+    $('#video_file_upload').css({'display':'block'});
+
+ }
+ function image_preview()
+ {
+  var img=document.getElementById('edit').src;
+  document.getElementById('inital_image1').src=img; 
+ }
+
+function data_preview(id,assignTo ,charlen)
+{
+ charLength = charlen;
+editor_object.removeAttr('customAttr');
+editor_object.removeAttr('customAttr1');
+  var val=document.getElementById(id).innerHTML;
+  var updated_val=val.replace(/<[^>]*>/g, "");
+ $('.click2edit').summernote('reset');
+
+$('.click2edit').summernote('editor.insertText', updated_val);
+
+var myElement = document.getElementById('summernote');
+  myElement.setAttribute("customAttr", id);
+  myElement.setAttribute("customAttr1", assignTo);
+}
+function validateError(charlen)
+{
+        
+            $("#errmsg").html("Character's should be  max length of " + charlen ).show();
+          
+ }
+
+ function validPass(){
+     
+      $("#errmsg").html("").show().fadeOut("slow");
+
+ }
+
+ function add_to_script_tag(seqno1,start_time1,end_time1,sentense1,seqno2,start_time2,end_time2,sentense2,seqno3,start_time3,end_time3,sentense3)
+ {
+    var seqno=document.getElementById(seqno1).value;
+    var start_time=document.getElementById(start_time1).value;
+    var start_time_millsec='000';
+    var end_time_millsec='000';
+    var end_time=document.getElementById(end_time1).value;
+    var sentense=document.getElementById(sentense1).value;
+    
+    var seqno2=document.getElementById(seqno2).value;
+    var start_time2=document.getElementById(start_time2).value;
+    var end_time2=document.getElementById(end_time2).value;
+    var start_time_millsec2='000';
+    var end_time_millsec2='000';
+    var sentense2=document.getElementById(sentense2).value;
+
+    var seqno3=document.getElementById(seqno3).value;
+    var start_time3=document.getElementById(start_time3).value;
+    var end_time3=document.getElementById(end_time3).value;
+    var start_time_millsec3='000';
+    var end_time_millsec3='000';
+    var sentense3=document.getElementById(sentense3).value;
+
+      document.getElementById('output').innerHTML=seqno+'\n'+start_time+','+start_time_millsec +' '+'-->'+' '+end_time+','+end_time_millsec+'\n'+sentense+'\n\n'+seqno2+'\n'+start_time2 +','+start_time_millsec2 +' '+'-->'+' '+end_time2+','+end_time_millsec2+'\n'+sentense2+'\n\n'+seqno3+'\n'+start_time3 +','+start_time_millsec2 +' '+'-->'+' '+end_time3+','+end_time_millsec3+'\n'+sentense3;
+
+
+       document.getElementById('dynamica_srtfile').value=seqno+'@'+start_time+','+start_time_millsec +' '+'-->'+' '+end_time+','+end_time_millsec+'@'+sentense+'@@'+seqno2+'@'+start_time2 +','+start_time_millsec2 +' '+'-->'+' '+end_time2+','+end_time_millsec2+'@'+sentense2+'@@'+seqno3+'@'+start_time3 +','+start_time_millsec2 +' '+'-->'+' '+end_time3+','+end_time_millsec3+'@'+sentense3;
+    init();
+ }
+
+ </script>
+  </head>
+  <body>
+    <form id="contact-form" action="/prepareObject" method="post" enctype = "multipart/form-data" >
+      <div style="width: 100%">
+        <div style="float: left;width: 70%"> 
+    <h3 style="text-align: center;">WEBWALKTHROUGH</h3>
+  </div>
+    <div style="float: right;width: 30%"> 
+        
+      <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve" >
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button>
+
+    </div>
+  </div>
+        
+    <div id=wrapper>
+      
+      <div id=left>
+            
+        <div>
+          <input type='text'  id='dynamica_srtfile'  style="font-size: 35px;width:100%;display: none;"   name="Srtfile"    >
+
+         <input type='text'  id='dynamica_websiteName'  style="font-size: 35px;width:100%;display: none;"   name="websiteName"    >
+        </div>
+        <div>
+        <input type='text'  id='dynamica_landingPageName'  style="font-size: 35px;width:100%;display: none;"    name="landingPageName"  placeholder=""  >
+
+        <input type='text'  id='dynamica_landingPageDescription'  style="font-size: 35px;width:100%;display: none;"    name="landingPageDescription"  placeholder=""  >
+
+        <input type='text'  id='dynamica_screenName'  style="font-size: 35px;width:100%;display: none;"    name="screenName"  placeholder=""  >
+
+        <input type='text'  id='dynamica_featureName'  style="font-size: 35px;width:100%;display: none;"    name="featureName"  placeholder=""  >
+
+        <input type='text'  id='dynamica_aboutFeature'  style="font-size: 35px;width:100%;display: none;"    name="aboutFeature"  placeholder=""  >
+
+        </div>
+        <input type="text" name="xCursorposition" id='xCursorposition'  style="display: none;" />
+         <input type="text" name="yCursorposition" id='yCursorposition'  style="display: none;" />
+          <input type='text' name="" id='highlightArea'  style="display: none;" />
+          <input type="text" id='scale_of_screen_with_original_redius' style="display: none;" />
+
+            <input id="updated_crop_img" type="text" name='crop_landingPage'  style="display: none;" />
+             <input id="updated_crop_img_at_fourth_sceen" type="text" name='crop_featureScreen'  style="display: none;" />
+
+
+                <!--  <p id='ptag_for_subtitle' style='display:none'>Choose subtitel file<input type="file" id="choose_subtitle_file" name="userFile" accept='.srt' name='' /></p> -->
+ 
+        <!--  <div align="center" > 
+        
+      <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve" >
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button>
+
+    </div> -->
+  
+         <div id="owl-demo" class="owl-carousel owl-theme" style="">
+
+   
+    <div class="item disable-owl-swipe" ><img src=<%include webwalkthrough_svg_ejs_files/svg1 %></div>
+    <div class="item disable-owl-swipe"><img src=<%include webwalkthrough_svg_ejs_files/svg2 %></div>
+<div class="item disable-owl-swipe"><img src=<%include webwalkthrough_svg_ejs_files/svg3 %></div>
+<div class="item disable-owl-swipe"><img src=<%include webwalkthrough_svg_ejs_files/svg4 %></div>
+<div class="item disable-owl-swipe"><img src=<%include webwalkthrough_svg_ejs_files/svg5 %></div>
+
+</div>
+
+  
+      
+       
+      </div>
+
+      <div id=right style="background-color:#333333">
+            <div class="" style="background-color:#2f2f2f; padding-bottom:30px;">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='focus_id'> 
+                       Place the circle where you want to focus
+                     </div> 
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30px; padding-left:0px; padding-right:0px;" id='summernote_textarea'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                       Write your text here
+                     </div> 
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px; margin-top: 10px; "> 
+                     
+                        <!-- <textarea class="froala-editor" id='froala-editor' placeholder="Add your website here"></textarea>
+ -->
+
+                      <!--  <div class="click2edit"></div> -->
+                      <textarea class="click2edit" id="summernote" name=""></textarea>
+                     </div> 
+                      <br><span id="errmsg" class='errmsg' style="color: #ff9900"></span><br>
+                   </div> 
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;text-align: center;" id='panel_image_div'>
+
+              <div class="image-upload" >
+    <label for="file-input" >
+        <img src="/images/images.png" width="35" />
+    </label>
+
+    <input id="file-input1" type="file" accept="image/*"/>
+</div>
+ 
+
+  <!-- leftbox -->
+  <div class="box-2">
+    <div class="result"></div>
+  </div>
+  <!--rightbox-->
+  <div class="box-2 img-result hide">
+    <!-- result of crop -->
+    <img class="cropped" src="" alt="">
+  </div>
+  <!-- input file -->
+  <div class="box">
+    <div class="options hide">
+      <!-- <label> Width</label> -->
+      <input type="number" class="img-w" value="300" min="100" max="1200" style="display: none;" />
+    </div>
+    <!-- save btn -->
+    <button class="btn save hide">Save</button>
+    <!-- <button class="btn reset hide">Reset</button> -->
+    <!-- download btn -->
+    <!-- <a href="" class="btn download hide">Download</a> -->
+  </div>
+                   <!-- <img src='images/upload.png' id='inital_image1' class="cropped"/> -->
+                    <!-- <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="trigger collapsed">
+                                        My Images
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body" style="text-align:center;">
+                                    <input type="image" src="images/upload.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:10px;text-align: center;" id='video_upload_id'>
+                   <label id='videolabel' style=" padding: 10px;
+    background: red; 
+    display: table;
+    color: white;margin-left: 30px;"> Upload video from here
+    <input type="file" id="video_file_upload"  name='featureVideo' size="80" style=" display: none;text-align: center;">
+    </label> 
+                </div>
+
+                 <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:10px;text-align: center;" id='subtitle_upload_id'>
+                   <a style=""  id="downloaded" >Add subtitles</a>
+                 <!--   <label style=" padding: 10px;
+    background: blue; 
+    display: table;
+    color: white;margin-left: 30px;"> Add subtitles
+    <input type="file" id="subtitles_file_upload"   size="80" style=" display: none;text-align: center;">
+    </label>  -->
+                </div>
+
+ <p id='ptag_for_subtitle' style='display:none'> <label style=" padding: 10px;
+    background: red; 
+    display: table;
+    color: white;margin-left: 30px;"> Choose subtitel file
+    <input type="file" id="choose_subtitle_file"  name="userFile" size="80" accept='.srt' style=" display: none;text-align: center;">
+    </label> </p>
+
+
+                <!--  <p id='ptag_for_subtitle' style='display:none'>Choose subtitel file<input type="file" id="choose_subtitle_file" name="userFile" accept='.srt' name='' /></p> -->
+ <input type="text" name="" class=""    id='landingPage_File' style='display:none'>
+<script type="text/vtt" id="output" data-label="English" data-lang="en" style='display:none'></script>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='stock_images_div'>
+                    <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                        Stock Images
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                   <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                      <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='bg_div'>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="color:#fff; font-size:15px;">
+                        Background:
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <input type='text' id="custom" />
+                    </div>
+                </div>
+                 <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:10px;text-align: center;">
+         <button id="callConfirm" >AddSubtitles(Through popup)</button>
+       </div>
+
+<div id="dialog" title="Subtitle Track">
+ <label style="color: black;">Sequence no</label><input id='seq1' type="number" style="width: 3em"  name="" >
+  <div>
+  <br>
+                  <div style="float: left;width:50%">
+                <label style="color: black;">Start</label><input id='seq1_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;width:50%">
+                <label style="color: black;">End</label><input id='seq1_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div>
+              <br><br><br>
+              <div>
+             <div style="color: black;float: left;width:30%">
+              <label >Sentence</label>
+             </div>
+             <div style="float: right;width:70%">
+              <input id='seq1_sentense_id' type="text"    name="" >
+             </div>
+               
+                  </div>
+                  <br>
+                 <br>
+
+                  <label style="color: black;">Sequence no</label><input id='seq2' type="number" style="width: 3em"  name="" >
+                <br><br>
+                <div>
+                  <div style="float: left;width:50%">
+                <label style="color: black;">Start</label><input id='seq2_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;width:50%">
+                <label style="color: black;">End</label><input id='seq2_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div>
+              <br>
+              <br>
+                  <br>
+              
+    <div>
+             <div style="color: black;float: left;width:30%">
+              <label >Sentence</label>
+             </div>
+             <div style="float: right;width:70%">
+              <input id='seq2_sentense_id' type="text"    name="" >
+             </div>
+               
+                  </div>
+                  <br>
+                  
+                  
+                  
+                          <br>
+                
+
+                  <label style="color: black;">Sequence no</label><input id='seq3' type="number" style="width: 3em"  name="" >
+                <br><br>
+                <div>
+                  <div style="float: left;width:50%">
+                <label style="color: black;">Start</label><input id='seq3_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;width:50%">
+                <label style="color: black;">End</label><input id='seq3_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div>
+              <br>
+              <br>
+                  <br>
+              
+    <div>
+             <div style="color: black;float: left;width:30%">
+              <label >Sentence</label>
+             </div>
+             <div style="float: right;width:70%">
+              <input id='seq3_sentense_id' type="text"    name="" >
+             </div>
+               
+                  </div>
+                  <br>
+                  
+                  
+</div>
+                <!-- <div style="color: white;text-align: center;" >Add subtiles</div> -->
+                
+                <!-- <label style="color: white;">Sequence no</label><input id='seq1' type="number" style="width: 3em"  name="" >
+                <br>
+                <div>
+                  <div style="float: left;">
+                <label style="color: white;">Start</label><input id='seq1_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;">
+                <label style="color: white;">End</label><input id='seq1_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div> -->
+              <!-- <br>
+              <br>
+                 <label style="color: white;float: left;">Sentence</label><input id='seq1_sentense_id' type="text" step='1' min="00:00:00" max="20:00:00" style="float: right;"  name="" ><br><br>
+
+                  <label style="color: white;">Sequence no</label><input id='seq2' type="number" style="width: 3em"  name="" >
+                <br> -->
+               <!--  <div>
+                  <div style="float: left;">
+                <label style="color: white;">Start</label><input id='seq2_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;">
+                <label style="color: white;">End</label><input id='seq2_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div> -->
+              <!-- <br>
+              <br>
+                 <label style="color: white;float: left;">Sentence</label><input id='seq2_sentense_id' type="text" step='1' min="00:00:00" max="20:00:00" style="float: right;"  name="" ><br><br>
+                  <label style="color: white;">Sequence no</label><input id='seq3' type="number" style="width: 3em"  name="" >
+                <br> -->
+                <!-- <div>
+                  <div style="float: left;">
+                <label style="color: white;">Start</label><input id='seq3_start_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              <div style="float: right;">
+                <label style="color: white;">End</label><input id='seq3_end_time_id' type="time" step='1' min="00:00:00" max="20:00:00" style=""  name="" >
+              </div>
+              </div> -->
+             <!--  <br>
+              <br> -->
+                <!--  <label style="color: white;float: left;">Sentence</label><input id='seq3_sentense_id' type="text" step='1' min="00:00:00" max="20:00:00" style="float: right;"  name="" ><br><br> -->
+              
+                <!--  <button type="button" style="text-align: center;" onclick="add_to_script_tag('seq1','seq1_start_time_id','seq1_end_time_id','seq1_sentense_id','seq2','seq2_start_time_id','seq2_end_time_id','seq2_sentense_id','seq3','seq3_start_time_id','seq3_end_time_id','seq3_sentense_id')">save</button> -->
+            </div>
+
+   
+
+    </div>
+
+    <div id=right1 style="background-color:#333333;display: none;" >
+        <!-- <div id=header>HEADER</div> -->
+        
+
+      <div class="list-group" style="background-color: brown">
+        <input type="color" class="theme" id="bg2" onchange="javascript:document.getElementById('full').style.backgroundColor=document.getElementById('bg2').value;"/>
+      
+        <div id="output-text" class="default">
+  hello folks 
+</div>
+     <select id="input-font" class="input">
+         <option value="">Please select</option>
+         <option value="default" selected ="selected">Times New Roman</option>
+         <option value="font1" class="font1" >Font 1</option>
+    <option value="font2" class="font2">Font 2</option>
+    </select>
+<br>
+      </div>
+
+    </div>
+<script type="text/javascript">
+  function show_hide(a,b) 
+  {
+   document.getElementById(a).style.display='none';
+   document.getElementById(b).style.display='block';
+  }
+</script>
+ <script>
+        $("#custom").spectrum({
+            color: "#f00"
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <script  src="js/image_upload.js"></script>
+     </form>
+  </body>
+  <script type='text/javascript'>
+
+// function for creating circle on web svg3
+var clippedImage3;
+var cp3;
+var mycircle3;
+var greencircle3;
+var gMouseDown3= 0;
+var scaleFactor3= 1.1;
+
+//Start Up Event and get Ids
+function startup3(evt)
+{
+     clippedImage3 = document.getElementById("clippedI3");
+     cp3 = document.getElementById("clipgroup3");
+     mycircle3 = document.getElementById("clipcircle3");
+     greencircle3 = document.getElementById("greencircle3");
+}
+function click_on_web_screen_three()
+{
+
+    var point = d3.mouse(this),p = {x: point[0], y: point[1] };
+    // document.getElementById("clipcircle3").style.display='inline-block';
+    // document.getElementById("greencircle3").style.display='inline-block';
+    document.getElementById("clipcircle3").setAttribute("cx", p.x);
+    document.getElementById("clipcircle3").setAttribute("cy", p.y);
+    // document.getElementById("greencircle3").setAttribute("cx", p.x);
+    // document.getElementById("greencircle3").setAttribute("cy", p.y);
+    // resizeImage3(p.x,p.y);
+    document.getElementById('xCursorposition').value=p.x;
+    document.getElementById('yCursorposition').value=p.y;
+    if(document.getElementById('highlightArea').value=='')
+    {
+       document.getElementById('highlightArea').value=100;
+       document.getElementById('scale_of_screen_with_original_redius').value=175; 
+    }
+}
+var svg = d3.select("#web_screen_2").on("click", click_on_web_screen_three);
+var zoom = d3.behavior.zoom()
+             .scaleExtent([0.2, 5])
+             .on("zoom",function()
+            {  
+                document.getElementById("clipcircle3").setAttribute("r", 175*d3.event.scale);
+                document.getElementById("greencircle3").setAttribute("r", 175*d3.event.scale);
+                if(document.getElementById('xCursorposition').value=='')
+                {
+                    document.getElementById('highlightArea').value=''; 
+                }
+                else
+                {
+                    document.getElementById('highlightArea').value=100*d3.event.scale;
+                    document.getElementById('scale_of_screen_with_original_redius').value=175*d3.event.scale;
+                }
+            });
+// d3.select('#web_screen_2').call(zoom);
+function resizeImage3(x,y)
+{   
+  var newx = x - scaleFactor3*x;
+  var newy = y - scaleFactor3*y;
+  var tx = "translate(" + newx + "," + newy + "),scale(" + scaleFactor3 + ")";
+  clippedImage3.setAttribute("transform", tx);
+}
+
+</script>
+<script>
+function parse_timestamp(s) 
+{
+    var match = s.match(/^(?:([0-9]+):)?([0-5][0-9]):([0-5][0-9](?:[.,][0-9]{0,3})?)/);
+    if (match == null)
+    {
+        throw 'Invalid timestamp format: ' + s;
+    }
+    var hours = parseInt(match[1] || "0", 10);
+    var minutes = parseInt(match[2], 10);
+    var seconds = parseFloat(match[3].replace(',', '.'));
+    return seconds + 60 * minutes + 60 * 60 * hours;
+}
+function vtt_or_srt_parser(vtt)
+{
+    var lines = vtt.trim().replace('\r\n', '\n').split(/[\r\n]/).map(function(line)
+    {
+        return line.trim();
+    });
+    var cues = [];
+    var start = null;
+    var end = null;
+    var payload = null;
+    for (var i = 0; i < lines.length; i++) 
+    { 
+        if (lines[i].indexOf('-->') >= 0) 
+        {
+            var splitted = lines[i].split(/[ \t]+-->[ \t]+/);
+            if (splitted.length != 2)
+            { 
+                throw 'Error when splitting "-->": ' + lines[i];
+            }
+            // Already ignoring anything past the "end" timestamp (i.e. cue settings).
+            start = parse_timestamp(splitted[0]);
+            end = parse_timestamp(splitted[1]);
+        }
+        else if (lines[i] == '')
+        {  
+            if (start && end)
+            {
+                var cue = new VTTCue(start, end, payload);
+                cues.push(cue);
+                start = null;
+                end = null;
+                payload = null;
+            }
+        } 
+        else if(start && end)
+        {  
+            if (payload == null)
+            {  
+                payload = lines[i];  
+            } 
+            else
+            {  
+                payload += '\n' + lines[i];
+            }
+        }
+    }
+    if (start && end)
+    {
+        var cue = new VTTCue(start, end, payload);
+        cues.push(cue);
+    }
+    return cues;
+}
+
+function init()
+{
+    var video = document.getElementById('player');
+    var subtitle = document.getElementById('output');
+    
+    var length_of_text_track = document.getElementById("player").textTracks.length;
+    var textTracks=document.getElementById("player").textTracks;
+    var track = video.addTextTrack('subtitles', subtitle.dataset.label, subtitle.dataset.lang);
+
+    var srtfile = (subtitle.innerHTML).replace(/(?:\\[r]|[\r])/g, "");
+    
+    var store_srtfile_in_json_file = subtitle.innerHTML.replace(/\n/g, '#');
+    // if(document.getElementById('choose_subtitle_file').value=='')
+    // {
+    //     track.mode = "hidden";
+    //     document.getElementById('landingPage_File').value='';
+    // }
+    // else
+    // {
+
+        // document.getElementById('landingPage_File').value=store_srtfile_in_json_file;
+        track.mode = "showing";
+    // }
+    if(browser=='mozilla')
+    {
+
+    }
+    else
+    {
+        for(var m=0;m<length_of_text_track;m++)
+        {
+            var textTrack = textTracks[m];
+            var cues = textTrack.cues;
+            for(var i=(cues.length-1);i>=0;i--)
+            {
+                textTrack.removeCue(cues[i]);
+            }
+        }  
+    }
+     
+    vtt_or_srt_parser(srtfile).map(function(cue)
+    {
+        track.addCue(cue);
+    });
+}
+
+</script>
+</html>
+
+

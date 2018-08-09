@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1919 1077" style="enable-background:new 0 0 1919 1077;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E6E6E6;}
+	.st1{fill:#78ACA9;}
+	.st2{fill:#79ADAA;}
+	.st3{fill:#79ADA8;}
+	.st4{fill:#A5C4C2;}
+	.st5{fill:#599996;}
+	.st6{fill:#FFFFFF;}
+	.st7{font-family:'SegoeUI-Bold';}
+	.st8{font-size:40.8px;}
+</style>
+<title>00</title>
+<g id="Layer_20">
+	<rect class="st0" width="1919" height="1077"/>
+</g>
+<g id="thin_line_5">
+	<polygon class="st1" points="1248.5,261.5 1245.5,267.5 1492.5,268.5 1497.5,261.5 	"/>
+</g>
+<g id="thin_line_4">
+	<polygon class="st2" points="1242.5,459.5 1238.5,464.5 1346.5,464.5 1353.5,459.5 	"/>
+</g>
+<g id="thin_line_3">
+	<polygon class="st3" points="670.5,289.5 664.8,294.2 1058.5,296.5 1061.5,290.5 	"/>
+</g>
+<g id="thin_line_2">
+	<polygon class="st2" points="882.6,616.1 875.5,620.9 1217.9,621.3 1224,616.9 	"/>
+</g>
+<g id="thin_line_1">
+	<polygon class="st2" points="467.6,394.1 460.5,398.9 802.9,399.3 809,394.9 	"/>
+</g>
+<g id="longer_prlgrm_1">
+	<polygon class="st2" points="929.5,561 1465.5,559 1528.5,613 973.5,611 	"/>
+</g>
+<g id="smaller_prlgrm_1">
+	<polygon class="st4" points="1356.5,402.5 1000.5,400.5 969.5,447.5 1326.5,447.5 	"/>
+</g>
+<g id="Layer_13">
+	<polygon class="st1" points="450.5,266.5 477.5,294.5 736.5,294.5 705.5,267.5 	"/>
+</g>
+<g id="smaller_prlgrm_1-2">
+	<polygon class="st5" points="1399.5,271.5 1131.5,272.5 1088.5,319.5 1369.5,319.5 	"/>
+</g>
+<g id="longer_prlgrm_2">
+	<polygon class="st4" points="573.5,380.5 499,303 1037,303 1118.5,381.5 	"/>
+</g>
+<g id="smaller_prlgrm_1-3">
+	<polygon class="st2" points="617.5,477.5 587.5,524.5 938.5,524.5 962.5,479.5 	"/>
+</g>
+<g id="white_prlgrm_2">
+	<polygon class="st6" points="789.5,337.5 781.5,352.5 1093,354.8 1076.3,339.1 	"/>
+</g>
+<g id="white_prlgrm_1">
+	<polygon class="st6" points="1174.5,575.5 945.5,575.5 933.5,564.5 1180.5,566.5 	"/>
+</g>
+<g id="smaller_prlgrm_1-4">
+	<polygon class="st2" points="628.1,598.5 599.5,644.5 865.1,644.5 894.5,598.5 	"/>
+</g>
+<g id="image">
+	<path class="st6" d="M777.5,357l-114,206.5l519-4l120-203.5C1302.5,356,777.5,360.1,777.5,357z"/>
+</g>
+<g id="websiteName" onclick="alert(this.id)" >
+	<text transform="matrix(1.1017 0 0 1 747.0303 842.7598)" class="st7 st8">Add your website here </text>
+	<text transform="matrix(1.1017 0 0 1 866.2515 842.7598)" class="st7 st8"> </text>
+</g>
+<image style="overflow:visible;" width="250" height="250" xlink:href="../productLogo.png"  id='cp_img1' transform="matrix(1.642 0 0 0.686 777.5 367)">
+</image>
+</svg>

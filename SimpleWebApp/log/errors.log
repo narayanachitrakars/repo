@@ -1,0 +1,64 @@
+[2018-07-26T11:43:39.135] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-28T09:14:40.543] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T09:14:40.587] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T09:41:46.369] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T09:41:46.488] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T10:07:50.298] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T10:14:11.442] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T10:17:32.443] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE AUTH=PLAIN AUTH=LOGIN] Dovecot ready.: * OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE NAMESPACE AUTH=PLAIN AUTH=LOGIN] Dovecot ready.
+[2018-07-28T10:19:38.424] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:20:14.540] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:25:06.224] [ERROR] emailService - Error at sendEmail function:Error: 140524868515712:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:../deps/openssl/openssl/ssl/s23_clnt.c:827:
+
+[2018-07-28T10:29:38.025] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T10:32:56.162] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:34:47.923] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:35:15.828] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:35:38.188] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:36:21.749] [ERROR] emailService - Error at sendEmail function:Error: Invalid greeting. response=+OK Dovecot ready.: +OK Dovecot ready.
+[2018-07-28T10:41:41.347] [ERROR] emailService - Error at sendEmail function:Error: Greeting never received
+[2018-07-28T10:47:20.956] [ERROR] emailService - Error at sendEmail function:Error: connect ECONNREFUSED 127.0.0.1:587
+[2018-07-28T10:52:55.393] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T11:14:14.906] [ERROR] emailService - Error at sendEmail function:Error: connect ECONNREFUSED 127.0.0.1:587
+[2018-07-28T11:21:52.464] [ERROR] emailService - Error at sendEmail function:Error: connect ECONNREFUSED 127.0.0.1:587
+[2018-07-28T11:32:22.491] [ERROR] emailService - Error at sendEmail function:Error: No transport method defined
+[2018-07-28T11:32:54.244] [ERROR] emailService - Error at sendEmail function:Error: No transport method defined
+[2018-07-28T11:35:34.539] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T11:45:51.018] [ERROR] emailService - Error at sendEmail function:Error: Invalid login: 503 5.5.1 Error: authentication not enabled
+[2018-07-28T11:46:14.507] [ERROR] emailService - Error at sendEmail function:Error: Invalid login: 503 5.5.1 Error: authentication not enabled
+[2018-07-28T11:56:58.716] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T11:57:43.901] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T12:03:49.338] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T12:15:08.015] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T12:16:41.927] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T12:38:43.187] [ERROR] emailService - Error at sendEmail function:Error: Greeting never received
+[2018-07-28T12:41:28.006] [ERROR] emailService - Error at sendEmail function:Error: Connection timeout
+[2018-07-28T12:49:29.348] [ERROR] emailService - Error at sendEmail function:Error: getaddrinfo ENOTFOUND smtp.webmail.com smtp.webmail.com:587
+[2018-07-28T12:51:04.801] [ERROR] emailService - Error at sendEmail function:Error: Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials p64-v6sm11285761pfa.47 - gsmtp
+[2018-07-28T12:58:21.386] [ERROR] emailService - Error at sendEmail function:Error: Greeting never received
+[2018-07-28T12:59:36.881] [ERROR] emailService - Error at sendEmail function:Error: Greeting never received
+[2018-07-30T09:03:18.988] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05aa') }
+[2018-07-30T09:03:18.990] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05ac') }
+[2018-07-30T09:03:18.991] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05ab') }
+[2018-07-30T09:03:18.992] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05ad') }
+[2018-07-30T09:03:18.993] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05ae') }
+[2018-07-30T09:03:18.993] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05af') }
+[2018-07-30T09:03:18.994] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05ba') }
+[2018-07-30T09:03:18.995] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05bb') }
+[2018-07-30T11:54:57.068] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T12:16:38.364] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T13:09:42.238] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T13:17:27.051] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T13:31:40.208] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T14:25:59.964] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-07-30T14:47:52.460] [ERROR] emailService - Error at sendEmail function:Error: No recipients defined
+[2018-08-02T11:13:55.148] [ERROR] crudService - Error at createRenderRequests function: RangeError: Attempt to write outside buffer bounds
+[2018-08-02T11:14:14.342] [ERROR] crudService - Error at createRenderRequests function: RangeError: Attempt to write outside buffer bounds
+[2018-08-02T11:14:18.960] [ERROR] crudService - Error at createRenderRequests function: RangeError: Attempt to write outside buffer bounds
+[2018-08-02T11:14:19.194] [ERROR] crudService - Error at createRenderRequests function: RangeError: Attempt to write outside buffer bounds
+[2018-08-02T11:14:23.633] [ERROR] crudService - Error at createRenderRequests function: RangeError: Attempt to write outside buffer bounds
+[2018-08-02T12:09:38.634] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05cd') }
+[2018-08-08T07:48:32.260] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05cf') }
+[2018-08-08T11:33:25.543] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05db') }
+[2018-08-09T06:10:44.257] [ERROR] crudService - Error at createTemplate function: MongoError: E11000 duplicate key error collection: libraryApp.dynamictemplates index: _id_ dup key: { : ObjectId('5b3c6c6506e6c532d87a05db') }

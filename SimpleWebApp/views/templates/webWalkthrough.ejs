@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+   <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/Sidebar.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/d3.js"></script>
+    <script src="js/jquery3.3.1-jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.0b1.js"></script>
+    <script type="text/javascript" src="js/jquery_ui_1.9.2jquery-ui.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel='stylesheet prefetch' href='css/cropper.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src='/js/firebase.js'></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/owl.transitions.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery-migrate-1.3.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/css/pagenav.css">
+    <script type="text/javascript" src="/js/popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    <script src="/js/mouseEvents.js"></script>
+    <script type="text/javascript" src="/js/webWalkthroughId.js"></script>
+    <script type="text/javascript" src="/js/ui_constants.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
+    <script type="text/javascript" src="/js/richTextEditor.js"></script>
+    <script type="text/javascript" src="/js/openVideoOnMouseOver.js"></script>
+    <script type="text/javascript" src="js/filePaths.js"></script>
+    <script type="text/javascript" src='/js/pagenationControl.js'></script>
+    <script type="text/javascript" src="/js/webwalkthrough.js"></script>
+    <script>
+    $(function() {
+ if('<%=data.websiteName%>' !='')
+ {
+   document.getElementById(ids[0]).value=<%-JSON.stringify(data.websiteName)%>;
+ }
+ if('<%=data.landingPageName%>' !=''){
+    document.getElementById(ids[1]).value=<%-JSON.stringify(data.landingPageName)%>;
+ }
+ if('<%=data.landingPageDescription%>' !=''){
+    document.getElementById(ids[2]).value=<%-JSON.stringify(data.landingPageDescription)%>;
+ }
+ if('<%=data.screenName%>' !=''){
+    document.getElementById(ids[3]).value=<%-JSON.stringify(data.screenName)%>;
+ }
+ if('<%=data.featureName%>' !=''){
+    document.getElementById(ids[4]).value=<%-JSON.stringify(data.featureName)%>;
+ }
+ if('<%=data.aboutFeature%>' !=''){
+    document.getElementById(ids[5]).value=<%-JSON.stringify(data.aboutFeature)%>;
+ }
+ if('<%=data.xCursorposition%>' !=''){
+    document.getElementById(ids[6]).setAttribute("cx",'<%=data.xCursorposition%>');
+    document.getElementById(ids[6]).setAttribute("cy",'<%=data.yCursorposition%>');
+   
+ }
+ if('<%=data.landingPage%>' !=''){
+  document.getElementById(imgids[0]).src='/projectImages/'+'<%=data.landingPage%>';
+  $('#'+imgids[0]).css('height',600);
+  $('#'+imgids[0]).css('width',1197); 
+  document.querySelector('#edit1').setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/projectImages/'+'<%=data.landingPage%>');
+  }
+  if('<%=data.featureScreen%>' !=''){
+  document.getElementById(imgids[1]).src='/projectImages/'+'<%=data.featureScreen%>';
+  $('#'+imgids[1]).css('height',580);
+  $('#'+imgids[1]).css('width',1162); 
+  }
+  
+  if('<%=data.featureVideo%>'!=''){
+    document.getElementById('videoSourceId').src='/projectImages/'+'<%=data.featureVideo%>';
+    document.getElementById(imgids[2]).style.display='none';
+  }
+  for(var i=0;i<6;i++)
+   {
+    document.getElementById(ids[i]).style.pointerEvents='none';
+    $('#web_screen_2').css('pointer-events', 'none');
+   }
+  for(var i=0;i<2;i++){
+    $('#'+filTypeIds[i]).attr({'disabled': 'disabled','pointerEvents': 'none'});
+}
+  $('#titileName').css('margin-top','-0.5%');
+  
+  document.getElementById(ids[0]).style.pointerEvents='none';
+document.getElementById('saveId').style.display='none';
+
+document.getElementById('buyMsg').innerHTML='<%=buyMsg%>';
+ })
+    </script>
+  </head>
+
+  <body style="border:10px;border-style:solid;border-color:#6F6E6D;">
+    <div id="preloader"></div>
+ <!--  <div class="preload"><img src="http://i.imgur.com/KUJoe.gif">
+</div> -->
+    <form id="contact-form" action="<%-fullurl%>" method="post" enctype = "multipart/form-data" >
+            <input type="text" id='filledDetailsStatus' name='filledDetailsStatus' style="display: none" />
+      <div style="width:100%">
+        <div style="float:left;width:60%;margin-top:1%;"> 
+                <input type="checkbox" id="myCheck" style="margin-left:20%;pointer-events: none;display: none">
+                <input  style="margin-left: 15%;"  type="button" id='saveId' value="Save" onclick="chcek()">
+    <h3 style="text-align:center;color:white;cursor:default;margin-top: -2.5%" id='titileName'>WEBWALKTHROUGH</h3>
+    <div style="margin-top:-4.5%;font-size:20px;">
+                         <% if(elem.TemplateDemoVideo ==''){ %>
+   
+ <% } else{ %>  
+                      <a href="<%= elem.TemplateDemoVideo %>" class="PlayDemoVideo" style="float: right;color:white">Play demo video</a><br><% } %> 
+                       
+                       <!--  <input id="websiteName" type="text" class="form-control "  size='30' name="websiteName" style='display:none'>  -->
+                    </div>
+  </div>
+
+    <div style="float:right;width:30%;margin-top:5px;" > 
+        
+      <!-- <button type="submit" id='Submit'>
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="26px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve" >
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button> -->
+
+    </div>
+  </div>
+        
+    <div id=wrapper>
+            <div id='errorMessage' style="text-align: center"></div>
+            <div id='buyMsg' style="color: green;text-align: center"></div>
+      <div id='left' style="width:72%;height:97%;margin-left:3.5%;margin-top:1%;border:4px;border-style:outset;border-color:#C1C0BF">
+            <!-- border:4px;border-style:outset;border-color:#C1C0BF -->
+        <div>
+          <input type='text'  id='dynamica_srtfile'  style="font-size: 35px;width:100%;display: none;"   name="Srtfile"    >
+        </div>
+        <div>
+        </div>
+        <input type="text" name="xCursorposition" id='xCursorposition'  style="display: none;" />
+         <input type="text" name="yCursorposition" id='yCursorposition'  style="display: none;" />
+          <input type='text' name="" id='highlightArea'  style="display: none;" />
+          <input type="text" id='scale_of_screen_with_original_redius' style="display: none;" />
+
+            <input id="updated_crop_img_landingPage" type="text" name='landingPage'  style="display: none;" />
+             <input id="updated_crop_img_featureScreen" type="text" name='featureScreen'  style="display: none;" />
+
+
+  
+         <div id="owl-demo"  style="" >
+    <div class="item disable-owl-swipe" ><%include webwalkthrough_svg_ejs_files/svg1 %></div>
+    <div class="item disable-owl-swipe"><%include webwalkthrough_svg_ejs_files/svg2 %></div>
+<div class="item disable-owl-swipe"><%include webwalkthrough_svg_ejs_files/svg3 %></div>
+<div class="item disable-owl-swipe"><%include webwalkthrough_svg_ejs_files/svg4 %></div>
+<div class="item disable-owl-swipe"><p <%include webwalkthrough_svg_ejs_files/svg5 %></div>
+
+</div>
+
+  
+      
+       
+      </div>
+ <!-- <div class="preload"> -->
+<!-- </div> -->
+      <div id='editableAreaId' style="background-color:#333333;height:97%;width:18%;border:4px;border-style:outset;border-color:#C1C0BF;margin-top:1%">
+            <div class="" >
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='focus_id'> 
+                       Place the circle where you want to focus
+                     </div> 
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='defaultActionTitle'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;" > 
+                     Place over the screen and edit the templates and Render Video
+                     </div> 
+                     
+                          </div>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30px; padding-left:0px; padding-right:0px;" id='summernote_textarea'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                       <div id ="actionTitle">Write your text here</div>
+                     </div> 
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px; margin-top: 10px; "> 
+                     
+                      <textarea class="click2edit" id="textEditorId" name=""></textarea>
+                     </div> 
+                      <br><span id="errmsgId" class='errmsg' style="color: #ff9900"></span><br>
+                   </div> 
+
+                
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;text-align: center;" id='imageEditSectionId'>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:5%; padding-right:0%;"> 
+                    Upload your Image here
+                     </div>
+                     <br><br>
+              <!-- <div class="image-upload" >
+    <label for="file-input" >
+        <img src="/images/images.png" width="35" />
+    </label>
+
+    <input id="file-input1" type="file" accept="image/*"/>
+</div> -->
+ 
+
+  <!-- leftbox -->
+  <div class="box-2" style="margin-left:15%">
+    <div class="imagePlaceForCrop"></div>
+  </div>
+  <!--rightbox-->
+  <!-- <div class="box-2 img-result hide"> -->
+    <!-- result of crop -->
+    <!-- <img class="cropped" src="" alt=""> -->
+  <!-- </div> -->
+  <!-- input file -->
+  <div class="box">
+   
+    <!-- save btn -->
+    <button id = "saveimgComp" class="btn save hide"  type="button" >Save</button>
+    
+  </div>
+                   
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:90px;text-align:center;" id='video_upload_div_id'>
+                   <label id='videolabel' style="padding:5px;
+    background: red; 
+    display: table;
+    color: white;margin-left:40px;"> Upload video from here
+    <input type="file" id="chooseVideoFileId"  name='featureVideo'  style=" display: none;text-align: center;width:140px" accept="video/mp4">
+    </label> 
+                </div>
+
+                 <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:10px;text-align: center;" id='upoad_subtitles_from_local_mechine'>
+                   <a style=""  id="downloaded" >Add subtitles</a>
+                
+                </div>
+
+ <p id='ptag_for_subtitle' style='display:none'> <label style=" padding: 10px;
+    background: red; 
+    display: table;
+    color: white;margin-left:90px;"> Choose subtitel file
+    <input type="file" id="chooseSubtitleFileId"  name="userFile" size="80" accept='.srt' style=" display: none;text-align: center;">
+    </label> </p>
+
+
+               
+ <input type="text" name="" class=""    id='landingPage_File' style='display:none'>
+<script type="text/vtt" id="srtFileid" data-label="English" data-lang="en" style='display:none'></script>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='stock_images_div'>
+                    <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                        Stock Images
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                   <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                      <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='bg_div'>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="color:#fff; font-size:15px;">
+                        Background:
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <input type='text' id="custom" />
+                    </div>
+                </div>
+                 <div class="col-lg-12 col-md-12 col-sm-3 col-xs-3" style="margin-top:10px;margin-left: 16%;">
+         <button id="showPopUpForAddTitles" >AddSubtitles(Through popup)</button>
+       </div>
+
+<div id="dialog" title="Subtitle Track">
+    <label style="color: black;">Sequence no</label><input id='seq1' type="number" style="width: 3em"  value='1'>
+    <div>
+        <div style="float: left;width:50%">
+            <label style="color: black;">Start</label><br><input id='seq1_start_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq1_start_time_id2' type="number"  placeholder="0" style="width: 2.5em" min='00' max='60' onkeypress="return isNumberKey(event)">
+            <input id='seq1_start_time_id3' type="number"  placeholder="0" style="width: 2.5em" min='00' max='60' onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+            
+        </div>
+
+        <div style="float: right;width:50%">
+            <label style="color: black;">End</label><br><input id='seq1_end_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq1_end_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq1_end_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+    </div>
+    <br/><br/><br/> <br>
+    <div>
+        <div style="color: black;float: left;width:30%">
+            <label >Sentence</label>
+        </div>
+        <div style="float: right;width:70%">
+            <input id='seq1_sentense_id' type="text"  placeholder="Enter your sentense"  name="" >
+        </div>
+    </div>
+    <br/><br/>
+    <label style="color: black;">Sequence no</label><input id='seq2' type="number" style="width: 3em"  value='2' >
+    <br/>
+    <div>
+        <div style="float: left;width:50%">
+            <label style="color: black;">Start</label><br><input id='seq2_start_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq2_start_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq2_start_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+        <div style="float: right;width:50%">
+            <label style="color: black;">End</label><br><input id='seq2_end_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq2_end_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq2_end_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+    </div>
+    <br/><br/><br/>        
+    <div>
+        <div style="color: black;float: left;width:30%">
+            <label >Sentence</label>
+        </div>
+        <div style="float: right;width:70%">
+            <input id='seq2_sentense_id' type="text" placeholder="Enter your sentence"   name="" >
+        </div>      
+    </div>
+    <br/><br/>
+    <label style="color: black;">Sequence no</label><input id='seq3' type="number" style="width: 3em"  value='3'>
+    <br/>
+    <div>
+        <div style="float: left;width:50%">
+            <label style="color: black;">Start</label><br><input id='seq3_start_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq3_start_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq3_start_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+        <div style="float: right;width:50%">
+            <label style="color: black;">End</label><br><input id='seq3_end_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq3_end_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq3_end_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+    </div>
+    <br/><br/><br/>         
+    <div>
+        <div style="color: black;float: left;width:30%">
+            <label >Sentence</label>
+        </div>
+        <div style="float: right;width:70%">
+            <input id='seq3_sentense_id' type="text"  placeholder="Enter your sentence"  name="" >
+        </div>       
+    </div>
+    <br/><br/>
+    <label style="color: black;">Sequence no</label><input id='seq4' type="number" style="width: 3em"  value='4'>
+    <br/>
+    <div>
+        <div style="float: left;width:50%">
+            <label style="color: black;">Start</label><br><input id='seq4_start_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq4_start_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq4_start_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+        <div style="float: right;width:50%">
+            <label style="color: black;">End</label><br><input id='seq4_end_time_id1' type="number"  style="width: 2em" min='00' max='01' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq4_end_time_id2' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <input id='seq4_end_time_id3' type="number"  style="width: 2.5em" min='00' max='60' placeholder="0" onkeypress="return isNumberKey(event)">
+            <th>H</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th>Min</th>&nbsp;&nbsp;&nbsp;<th>Sec</th>
+        </div>
+    </div>
+    <br/><br/><br/>         
+    <div>
+        <div style="color: black;float: left;width:30%">
+            <label >Sentence</label>
+        </div>
+        <div style="float: right;width:70%">
+            <input id='seq4_sentense_id' type="text"  placeholder="Enter your sentence"  name="" >
+        </div>       
+    </div>             
+</div>
+            
+            </div>
+
+   
+
+    </div>
+
+    <!-- <div id=right1 style="background-color:#333333;display: none;" >
+      
+
+      <div class="list-group" style="background-color: brown">
+        <input type="color" class="theme" id="bg2" onchange="javascript:document.getElementById('full').style.backgroundColor=document.getElementById('bg2').value;"/>
+      
+        <div id="output-text" class="default">
+  hello folks 
+</div>
+     <select id="input-font" class="input">
+         <option value="">Please select</option>
+         <option value="default" selected ="selected">Times New Roman</option>
+         <option value="font1" class="font1" >Font 1</option>
+    <option value="font2" class="font2">Font 2</option>
+    </select>
+<br>
+      </div>
+
+    </div> -->
+
+ <script>
+      // $.LoadingOverlay("show");
+        $("#custom").spectrum({
+            color: "#f00"
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <script  src="js/image_upload.js"></script>
+     </form>
+  </body>
+  <script type='text/javascript'>
+ 
+// function for creating circle on web svg3
+var clippedImage3;
+var cp3;
+var mycircle3;
+var greencircle3;
+var gMouseDown3= 0;
+var scaleFactor3= 1.1;
+
+//Start Up Event and get Ids
+function startup3(evt)
+{
+     clippedImage3 = document.getElementById("clippedI3");
+     cp3 = document.getElementById("clipgroup3");
+     mycircle3 = document.getElementById("clipcircle3");
+     greencircle3 = document.getElementById("greencircle3");
+}
+function click_on_web_screen_three()
+{
+
+    if(browser=='mozilla')
+    {
+        var point = d3.mouse(document.getElementById('sv1')),p = {x: point[0], y: point[1] };
+    }
+    else
+    {
+        var point = d3.mouse(this),p = {x: point[0], y: point[1] };
+    }
+    // document.getElementById("clipcircle3").style.display='inline-block';
+    // document.getElementById("greencircle3").style.display='inline-block';
+    document.getElementById("clipcircle3").setAttribute("cx", p.x);
+    document.getElementById("clipcircle3").setAttribute("cy", p.y);
+   
+   
+    // document.getElementById("greencircle3").setAttribute("cx", p.x);
+    // document.getElementById("greencircle3").setAttribute("cy", p.y);
+    // resizeImage3(p.x,p.y);
+    document.getElementById('xCursorposition').value=p.x;
+    document.getElementById('yCursorposition').value=p.y;
+    if(document.getElementById('highlightArea').value=='')
+    {
+       document.getElementById('highlightArea').value=100;
+       document.getElementById('scale_of_screen_with_original_redius').value=175; 
+    }
+}
+
+// d3.select("#web_screen_2").on("click", function() {
+//     console.log(d3.mouse(document.getElementById('sv1')));
+// })
+var svg = d3.select("#web_screen_2").on("click", click_on_web_screen_three);
+var zoom = d3.behavior.zoom()
+             .scaleExtent([0.2, 5])
+             .on("zoom",function()
+            {  
+                document.getElementById("clipcircle3").setAttribute("r", 175*d3.event.scale);
+                document.getElementById("greencircle3").setAttribute("r", 175*d3.event.scale);
+                if(document.getElementById('xCursorposition').value=='')
+                {
+                    document.getElementById('highlightArea').value=''; 
+                }
+                else
+                {
+                    document.getElementById('highlightArea').value=100*d3.event.scale;
+                    document.getElementById('scale_of_screen_with_original_redius').value=175*d3.event.scale;
+                }
+            });
+// d3.select('#web_screen_2').call(zoom);
+function resizeImage3(x,y)
+{   
+  var newx = x - scaleFactor3*x;
+  var newy = y - scaleFactor3*y;
+  var tx = "translate(" + newx + "," + newy + "),scale(" + scaleFactor3 + ")";
+  clippedImage3.setAttribute("transform", tx);
+}
+
+</script>
+<script>
+function parse_timestamp(s) 
+{
+    var match = s.match(/^(?:([0-9]+):)?([0-5][0-9]):([0-5][0-9](?:[.,][0-9]{0,3})?)/);
+    if (match == null)
+    {
+        throw 'Invalid timestamp format: ' + s;
+    }
+    var hours = parseInt(match[1] || "0", 10);
+    var minutes = parseInt(match[2], 10);
+    var seconds = parseFloat(match[3].replace(',', '.'));
+    return seconds + 60 * minutes + 60 * 60 * hours;
+}
+function vtt_or_srt_parser(vtt)
+{
+    var lines = vtt.trim().replace('\r\n', '\n').split(/[\r\n]/).map(function(line)
+    {
+        return line.trim();
+    });
+    var cues = [];
+    var start = null;
+    var end = null;
+    var payload = null;
+    for (var i = 0; i < lines.length; i++) 
+    { 
+        if (lines[i].indexOf('-->') >= 0) 
+        {
+            var splitted = lines[i].split(/[ \t]+-->[ \t]+/);
+            if (splitted.length != 2)
+            { 
+                throw 'Error when splitting "-->": ' + lines[i];
+            }
+            // Already ignoring anything past the "end" timestamp (i.e. cue settings).
+            start = parse_timestamp(splitted[0]);
+            end = parse_timestamp(splitted[1]);
+        }
+        else if (lines[i] == '')
+        {  
+            if (start && end)
+            {
+                var cue = new VTTCue(start, end, payload);
+                cues.push(cue);
+                start = null;
+                end = null;
+                payload = null;
+            }
+        } 
+        else if(start && end)
+        {  
+            if (payload == null)
+            {  
+                payload = lines[i];  
+            } 
+            else
+            {  
+                payload += '\n' + lines[i];
+            }
+        }
+    }
+    if (start && end)
+    {
+        var cue = new VTTCue(start, end, payload);
+        cues.push(cue);
+    }
+    return cues;
+}
+
+function init()
+{
+    var video = document.getElementById(videoPlayer);
+    var subtitle = document.getElementById(srtFileid);
+    
+    var length_of_text_track = document.getElementById(videoPlayer).textTracks.length;
+    var textTracks=document.getElementById(videoPlayer).textTracks;
+    var track = video.addTextTrack('subtitles', subtitle.dataset.label, subtitle.dataset.lang);
+
+    var srtfile = (subtitle.innerHTML).replace(/(?:\\[r]|[\r])/g, "");
+    
+    var store_srtfile_in_json_file = subtitle.innerHTML.replace(/\n/g, '#');
+    
+        track.mode = "showing";
+  
+    if(browser=='mozilla')
+    {
+
+    }
+    else
+    {
+        for(var m=0;m<length_of_text_track;m++)
+        {
+            var textTrack = textTracks[m];
+            var cues = textTrack.cues;
+            for(var i=(cues.length-1);i>=0;i--)
+            {
+                textTrack.removeCue(cues[i]);
+            }
+        }  
+    }
+     
+    vtt_or_srt_parser(srtfile).map(function(cue)
+    {
+        track.addCue(cue);
+    });
+}
+
+</script>
+<script type="text/javascript" src="/js/videoUpload.js"></script>
+</html>
+
+

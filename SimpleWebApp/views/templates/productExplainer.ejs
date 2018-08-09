@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+   <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/Sidebar.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/d3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src='/js/firebase.js'></script>
+    <script src="/js/spectrum.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.3.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/css/pagenav.css">
+    <script type="text/javascript" src="/js/popup.js"></script>
+     <script src="/js/mouseEvents.js"></script>
+    <script type="text/javascript" src="/js/ui_constants.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
+    <script type="text/javascript" src="/js/productExplainerId.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/popup.css">
+      <script type="text/javascript" src="/js/openVideoOnMouseOver.js"></script>
+      <script type="text/javascript" src="js/filePaths.js"></script>
+      <script type="text/javascript" src='/js/pagenationControl.js'></script>
+      <script type="text/javascript" src="/js/productExplainer.js"></script>
+    <style type="text/css">
+        .owl-theme .owl-controls .owl-page {
+    position: relative;
+    display: inline-block;
+    width: 4.5em;
+    height: 3em;
+    margin: 0 .25em;
+    outline: none;
+    transition: all .1s ease-in-out; }
+
+    </style>
+  <script>
+  $(function() {
+    
+  if('<%=data.characterName%>' !=''){
+    
+  document.getElementById(ids[0]).value=<%-JSON.stringify(data.characterName)%>; 
+  document.getElementById("Character_name_at_fifthscreen").textContent=<%-JSON.stringify(data.characterName)%>;
+  document.getElementById("productname_at_fifteenthscreen").textContent=<%-JSON.stringify(data.characterName)%>;
+}
+if('<%=data.characterProfession%>'!=''){
+    document.getElementById(ids[1]).value=<%-JSON.stringify(data.characterProfession)%>;
+}
+if('<%=data.problemStatement%>'!=''){
+    document.getElementById(ids[2]).value=<%-JSON.stringify(data.problemStatement)%>;
+}
+if('<%=data.exploredOption1%>'!=''){
+    document.getElementById(ids[3]).value=<%-JSON.stringify(data.exploredOption1)%>;
+}
+if('<%=data.exploredOption2%>'!=''){
+    document.getElementById(ids[4]).value=<%-JSON.stringify(data.exploredOption2)%>;
+}
+if('<%=data.exploredOption3%>'!=''){
+    document.getElementById(ids[5]).value=<%-JSON.stringify(data.exploredOption3)%>;
+    document.getElementById(ids[6]).value=<%-JSON.stringify(data.exploredOption3)%>;
+}
+if('<%=data.productName%>'!=''){
+    document.getElementById("productName_at_screen7").textContent=<%-JSON.stringify(data.productName)%>;
+    document.getElementById(ids[7]).value=<%-JSON.stringify(data.productName)%>;
+}  
+ if('<%=data.productLogo%>'){
+    document.getElementById(imgids[0]).src='/projectImages/'+'<%=data.productLogo%>';
+  $('#'+imgids[0]).css('height',180);
+  $('#'+imgids[0]).css('width',180); 
+  document.querySelector('#logo_at_eigth_screen_in_explainer').setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/projectImages/'+'<%=data.productLogo%>');
+  document.querySelector('#logo_at_fifteenth_screen_in_explainer').setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/projectImages/'+'<%=data.productLogo%>'); 
+}
+if('<%=data.solutionOffered%>'!=''){
+    document.getElementById(ids[8]).value=<%-JSON.stringify(data.solutionOffered)%>;
+}
+if('<%=data.keyFeature1%>'!=''){
+    document.getElementById(ids[9]).value=<%-JSON.stringify(data.keyFeature1)%>;
+}
+if('<%=data.keyFeature2%>'!=''){
+    document.getElementById(ids[10]).value=<%-JSON.stringify(data.keyFeature2)%>;
+}
+if('<%=data.keyFeature3%>'!=''){
+    document.getElementById(ids[11]).value=<%-JSON.stringify(data.keyFeature3)%>;
+}
+if('<%=data.keyFeature4%>'!=''){
+    document.getElementById(ids[12]).value=<%-JSON.stringify(data.keyFeature4)%>;
+}
+ if('<%=data.screen1id%>'!=''){
+    document.getElementById(imgids[1]).src='/projectImages/'+'<%=data.screen1id%>';
+  $('#'+imgids[1]).css('height',659);
+  $('#'+imgids[1]).css('width',1266.5);
+ }
+ if('<%=data.screen1Text%>'!=''){
+    document.getElementById(ids[13]).value=<%-JSON.stringify(data.screen1Text)%>;
+ }
+ if('<%=data.screen2id%>'!=''){
+    document.getElementById(imgids[2]).src='/projectImages/'+'<%=data.screen2id%>';
+  $('#'+imgids[2]).css('height',659);
+  $('#'+imgids[2]).css('width',1266.5); 
+ } 
+ if('<%=data.screen2Text%>'!=''){
+    document.getElementById(ids[14]).value=<%-JSON.stringify(data.screen2Text)%>;
+ }
+ if('<%=data.screen3id%>'!=''){
+    document.getElementById(imgids[3]).src='/projectImages/'+'<%=data.screen3id%>';
+  $('#'+imgids[3]).css('height',659);
+  $('#'+imgids[3]).css('width',1266.5); 
+ }
+ if('<%=data.screen3Text%>'!=''){
+    document.getElementById(ids[15]).value=<%-JSON.stringify(data.screen3Text)%>;
+ }
+if('<%=data.benefit1%>'!=''){
+    document.getElementById(ids[16]).value=<%-JSON.stringify(data.benefit1)%>;
+}
+if('<%=data.benefit2%>'!=''){
+    document.getElementById(ids[17]).value=<%-JSON.stringify(data.benefit2)%>;
+}
+if('<%=data.benefit3%>'!=''){
+    document.getElementById(ids[18]).value=<%-JSON.stringify(data.benefit3)%>;
+}
+if('<%=data.contactDetails%>'!=''){
+    document.getElementById(ids[19]).value=<%-JSON.stringify(data.contactDetails)%>;
+}
+if('<%=data.slogan%>'!=''){
+    document.getElementById(ids[20]).value=<%-JSON.stringify(data.slogan)%>;
+}
+for(var i=0;i<4;i++){
+    $('#'+filTypeIds[i]).attr({'disabled': 'disabled','pointerEvents': 'none'});
+}
+   $('#titileName').css('margin-top','-0.5%');
+   for(var i=0;i<21;i++)
+   {
+    document.getElementById(ids[i]).style.pointerEvents='none';
+   } 
+document.getElementById('saveId').style.display='none';
+document.getElementById('buyMsg').innerHTML='<%=buyMsg%>';
+  })</script>
+  </head>
+  <body style="border:10px;border-style:solid;border-color:#6F6E6D;">
+    <div id="preloader"></div>
+    <form id="contact-form" action="<%-fullurl%>" method="post" enctype = "multipart/form-data" >
+    <input type="text" id='filledDetailsStatus' name='filledDetailsStatus' style="display: none" />
+        <div style="width:100%">
+        <div style="float:left;width:60%;margin-top:10px;"> 
+                <input type="checkbox" id="myCheck" style="margin-left:20%;pointer-events:none;display: none">
+                <!-- </fieldset> -->
+                <input  style="margin-left:15%;"  type="button" id='saveId' value="Save" onclick="chcek()">
+            <h3 style="text-align:center;color:white;cursor:default;margin-top: -2.5%" id='titileName'>Animated Explainer</h3>
+            <div style="margin-top:-35px;font-size:20px;">
+                         <% if(elem.TemplateDemoVideo ==''){ %>
+   
+ <% } else{ %>  
+                      <a href="<%= elem.TemplateDemoVideo %>" class="PlayDemoVideo" style="float: right;color:white">Play demo video</a><br><% } %> 
+                       
+                       <!--  <input id="websiteName" type="text" class="form-control "  size='30' name="websiteName" style='display:none'>  -->
+                    </div>
+        </div>
+    <div style="float:right;width:30%;margin-top:5px;"> 
+        
+      <!-- <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="80px" height="26px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve" >
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button> -->
+
+    </div>
+  </div>
+        
+    <div id=wrapper>
+            <div id='errorMessage' style="text-align: center"></div>
+            <div id='buyMsg' style="color: green;text-align: center"></div>
+      <div id=left style="width:72%;height:97%;margin-left:3.5%;margin-top:1%;border:4px;border-style:outset;border-color:#C1C0BF">
+          <input id="updated_crop_productLogo" type="text" name='productLogo' style="display: none;" />
+           <input id="updated_crop_img_screen1" type="text" name='screen1id'  style="display: none;" />
+           <input id="updated_crop_img_screen2" type="text" name='screen2id'  style="display: none;" />
+            <input id="updated_crop_img_screen3" type="text" name='screen3id'  style="display: none;" />
+            <input id="Background_01Id" type="text" name='Back ground_01'  style="display: none;" />
+        <div id="owl-demo">
+    <div class="item disable-owl-swipe" ><%include productExplainer_svg_files/svg1 %></div>
+    <div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg2 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg3 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg4 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg5 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg6 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg7 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg8 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg9 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg10 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg11 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg12 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg13 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg14 %></div>
+<div class="item disable-owl-swipe"><%include productExplainer_svg_files/svg15 %></div>
+
+</div>    
+      </div>
+ <!-- <div class="preload">
+</div> -->
+      <div id='editableAreaId' style="background-color:#333333;height:97%;width:18%;border:4px;border-style:outset;border-color:#C1C0BF;margin-top:1%">
+            <div class="" >
+               
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='defaultActionTitle'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                     Place over the screen and edit the templates and Render Video
+                     </div> 
+                     
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;padding-top:100px;" id='ntngEditable'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                     
+                     </div> 
+                     
+                          </div>
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 30px; padding-left:0px; padding-right:0px;" id='summernote_textarea'>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                       <div id ="actionTitle">Write your text here</div>
+                     </div> 
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px; margin-top: 10px; "> 
+                      <textarea class="click2edit" id="textEditorId" name=""></textarea>
+                     </div> 
+                      <br><span id="errmsgId" class='errmsg' style="color: #ff9900"></span><br>
+                   </div> 
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;text-align: center;" id='imageEditSectionId'>
+                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: #fff; font-size: 20px; padding-left:0px; padding-right:0px;"> 
+                    Upload your Image here
+                     </div>
+             <!-- <div class="image-upload" >
+    <label for="file-input12" >
+        <img src="/images/images.png" width="35" />
+    </label>
+
+    <input id="file-input12" type="file" accept=".png, .jpg, .jpeg"/>
+</div>
+  -->
+
+  
+  <div class="box-2" style="margin-top: 8%">
+    <div class="imagePlaceForCrop"></div>
+  </div>
+  
+  <!-- <div class="box-2 img-result hide"> -->
+    
+    <!-- <img class="cropped" src="" alt=""> -->
+  <!-- </div> -->
+ 
+  <div class="box">
+    <!-- <div class="options hide">
+     
+      <input type="number" class="img-w" value="300" min="100" max="1200" style="display: none;" />
+    </div> -->
+    
+    <button class="btn save hide" type="button">Save</button>
+  </div>
+                   
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='stock_images_div'>
+                    <div class="collapse-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="trigger collapsed">
+                                        Stock Images
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                   <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                      <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                     <div style="width: auto; height: auto; float: left; margin-right: 10px ; border:1px solid #2a2a2a; padding: 5px; margin-top: 10px;">
+                                       <img src="/images/video-play.png">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='bg_div'>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="color:#fff; font-size:15px;">
+                        Background:
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <input type='text' id="custom" />
+                    </div>
+                </div>
+                 
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;" id='bg_div'>
+                    <br>
+                    <br> 
+                    <br>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="color:#fff; font-size:15px;">
+                    Background:
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <input type='text' class="basic" id ="backGrndColrId"/>
+                </div>
+            </div>
+
+            </div>
+
+   
+
+    </div>
+
+
+    </div>
+
+ <script>
+      // $.LoadingOverlay("show");
+        $("#custom").spectrum({
+            color: "#f00"
+        });
+        $("#backGrndColrId").spectrum({
+            color: "#f00",
+            change: function(color) {
+                changeBackgroundColor(color) 
+              }
+        });
+
+        function changeBackgroundColor(color){
+           var backGrndId = ['backGrnd1','backGrnd2','backGrnd3','backGrnd4','backGrnd5','backGrnd6','backGrnd7','backGrnd8','backGrnd9','backGrnd10','backGrnd11','backGrnd12','backGrnd13','backGrnd14','backGrnd15'];
+            for(i=0 ; i<backGrndId.length;i++){
+                document.getElementById(backGrndId[i]).style.fill=color.toRgbString();
+            }
+          var rgbColor = color.toRgb();
+          var rgbArray = '[' +rgbColor.r +',' + rgbColor.g +',' +rgbColor.b+']';
+            document.getElementById("Background_01Id").value=rgbArray;
+        }
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+    <script  src="/js/image_upload.js"></script>
+    <script type="text/javascript" src="/js/richTextEditor.js"></script>
+     </form>
+  </body>
+</html>
+
+

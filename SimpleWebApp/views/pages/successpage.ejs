@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+<title>The Chitrakars: Magic Wand</title>
+  <meta charset="UTF-8">
+  <style>
+.button-class {
+    background-color: #757575;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black;
+}
+header, footer {
+    position: fixed;
+    width: 100%;
+    background-color: #0C0C0C;
+}
+header {
+    top: 0;
+    height: 50px;
+}
+footer {
+    bottom: 0;
+    height: 50px;
+}
+</style>
+   <script src='https://www.gstatic.com/firebasejs/3.6.2/firebase.js'></script>
+ <script >
+  var config = {
+ apiKey: "AIzaSyCZWa5wChnendahT6sTdfNJhmFbnI8Cz5g",
+    authDomain: "productexplainer.firebaseapp.com",
+    databaseURL: "https://productexplainer.firebaseio.com",
+    projectId: "productexplainer",
+    storageBucket: "productexplainer.appspot.com",
+    messagingSenderId: "350462790215"
+};
+
+firebase.initializeApp(config);
+var messaging = firebase.messaging();
+
+messaging.onMessage((notif) => {
+    var title=notif.notification.title;
+var options ={
+body:notif.notification.body,
+icon:notif.notification.icon
+}
+noti= new Notification(title, options);
+ });
+ </script>
+</head>
+<body style=" position: relative;
+     background-color: #151515; margin:0;
+    padding:0;">
+   <header>
+        
+    <a><img src="images/logo.png" alt="" height="50" align="left"/></a>
+                     
+    </header>
+
+
+  <br><br><br>  <br><br><br><br><br><br><br><br><br>
+  <div >
+<h1 style="text-align: center;font-weight: bold;font-size: 50px;color: white">Success!</h1>
+<h2 style="text-align: center;color: #616161">Your video is successfully published.</h2>
+<h2 style="text-align: center;color: #FFFFFF">We will send you the download link to registered email in next 2 hours.</h2>
+<h2 style="text-align: center;color: white">Thank you for using the Chitrakars.</h2>
+<a href="/" class="button-class" style=" display: table;margin: 0 auto;">CREATE ANOTHER VIDEO</a><br><br><br><br><br><br><br><br>
+</div>
+ <footer>
+        <h6 style="text-align: center;color: #616161">@ 2017 THE CHITRAKARS<h6>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+[
+   { "_id" :"5b3c6c6506e6c532d87a05da", "priority" : 18, "TemplateName" : "CoffeeFlyer", "TemplateAEPFile" : "", "TemplateIconClassWidth" : "-7px", "TemplateIconClassHeigth" : "-93px", "TemplateDemoVideo" : "", "TemplateSubtitle" : "CREATE YOUR COFFEE FLYER", "TemplateIcon" : "./templateImages/img-sprite.png", "TemplateRedirectFile" : "./templateImages/index.ejs", "TemplateImage" : "./templateImages/5b3c6c6506e6c532d87a05da.png", "Price" : 1000} 
+ ]

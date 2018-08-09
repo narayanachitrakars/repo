@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1920 1087" style="enable-background:new 0 0 1920 1087;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#62ACAB;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#CE9A73;}
+	.st3{font-family:'SegoeUI-SemiBold';}
+	.st4{font-size:48px;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st6{fill:#C99262;}
+	.st7{fill:#FFFBF5;}
+	.st8{font-family:'SegoeUI-Bold';}
+	.st9{font-size:60.0174px;}
+</style>
+<g id="Layer_1_1_">
+	<title>Scene_07</title>
+	<g id="bg">
+		<rect class="st0" width="1920" height="1087"/>
+	</g>
+	<g id="Layer_4">
+		<g id="profession_box_1_">
+			<rect id="rec" x="1041" y="581.8" class="st1" width="730.1" height="158.7"/>
+		</g>
+		<text id="line1" transform="matrix(1 0 0 1 1053.0237 639.2798)" class="st2 st3 st4">Provide your problem statement </text>
+		<text id="line2" transform="matrix(1 0 0 1 1065.7236 702.88)" class="st2 st3 st4">here</text>
+	</g>
+	<g id="Layer_2">
+		
+			<rect x="1461.7" y="23.7" transform="matrix(7.724676e-02 -0.997 0.997 7.724676e-02 1013.3945 1879.4287)" class="st5" width="120.6" height="737.1"/>
+		<polygon class="st5" points="1047,585.7 1764.7,557.4 1779.2,731.9 1061.5,760.3 		"/>
+		
+			<rect x="1465.8" y="28.1" transform="matrix(3.682296e-02 -0.9993 0.9993 3.682296e-02 1066.8818 1907.4293)" class="st6" width="114.2" height="744.3"/>
+	</g>
+	<g id="Layer_3">
+		<text transform="matrix(0.9986 5.379105e-02 -5.379105e-02 0.9986 1248.4504 402.9559)" class="st7 st8 st9">He</text>
+		<text transform="matrix(0.9986 5.379105e-02 -5.379105e-02 0.9986 1326.7393 407.1737)" class="st7 st8 st9">’</text>
+		<text transform="matrix(0.9986 5.379105e-02 -5.379105e-02 0.9986 1339.9213 407.8843)" class="st7 st8 st9">s Struggling to </text>
+	</g>
+</g>
+<g id="Layer_2_1_">
+	
+		<image style="overflow:visible;enable-background:new    ;" width="967" height="1414" xlink:href="../Asset 1.png"  transform="matrix(1 0 0 1 -58 -515)">
+	</image>
+</g>
+</svg>

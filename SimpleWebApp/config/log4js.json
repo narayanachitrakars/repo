@@ -1,0 +1,59 @@
+{
+    "appenders": {
+      
+      "app": {
+        "type": "file",
+        "filename": "log/app.log",
+        "maxLogSize":104857600000,
+        "numBackups":15
+      },
+       "infoFile": {
+        "type": "file",
+        "filename": "log/info.log"
+      },
+      "information": {
+        "type": "logLevelFilter",
+        "level": "INFO",
+        "appender": "infoFile"
+      },
+      "errorFile": {
+        "type": "file",
+        "filename": "log/errors.log"
+      },
+      "errors": {
+        "type": "logLevelFilter",
+        "level": "ERROR",
+        "appender": "errorFile"
+      },
+      "debugFile": {
+        "type": "file",
+        "filename": "log/debug.log"
+      },
+      "debugs": {
+        "type": "logLevelFilter",
+        "level": "DEBUG",
+        "appender": "debugFile"
+      },
+      "fatalFile": {
+        "type": "file",
+        "filename": "log/fatal.log"
+      },
+      "fatals": {
+        "type": "logLevelFilter",
+        "level": "FATAL",
+        "appender": "fatalFile"
+      },
+      "warnFile": {
+         "type": "file",
+        "filename": "log/warn.log"
+      }
+    },
+    "categories": {
+      "default": { "appenders": [ "app","information","errors","debugs" ,"fatals"], "level": "DEBUG" },
+      "logger":{ "appenders": [ "debugFile"],"level":"DEBUG"},
+      "logger":{ "appenders": [ "errorFile"],"level":"ERROR"},
+      "logger":{ "appenders": [ "fatalFile"],"level":"FATAL"},
+      "logger":{ "appenders": [ "infoFile"],"level":"INFO"},
+      "logger":{ "appenders": [ "warnFile"],"level":"WARN"}
+    }
+  }

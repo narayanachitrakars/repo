@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>The Chitrakars: Magic Wand</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style3.css">
+    <script type="text/javascript" src="/js/Jquery.min.js"></script>
+    <script type="text/javascript" src="/js/pgenavigation.js"></script>
+    <script type="text/javascript" src="/js/ids_file.js"></script>
+    <script type="text/javascript" src="/js/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    <script type="text/javascript" src="/js/popup.js"></script>
+    <script type="text/javascript" src="/js/vimeocdn.js"></script>
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css">
+    <script type="text/javascript" src="/js/jquery_ui.js"></script>
+    <script src='/js/firebase.js'></script>
+ <script >
+    var config = {
+    apiKey: "AIzaSyCZWa5wChnendahT6sTdfNJhmFbnI8Cz5g",
+    authDomain: "productexplainer.firebaseapp.com",
+    databaseURL: "https://productexplainer.firebaseio.com",
+    projectId: "productexplainer",
+    storageBucket: "productexplainer.appspot.com",
+    messagingSenderId: "350462790215"
+};
+
+firebase.initializeApp(config);
+var messaging = firebase.messaging();
+messaging.onMessage((notif) => {
+     var title=notif.notification.title;
+var options ={
+body:notif.notification.body,
+icon:notif.notification.icon
+}
+noti= new Notification(title, options);
+ });
+ </script>
+    <script type="text/javascript">
+    function validate(divid,pattern,errmsgid,titleid)
+    {
+        
+        var regex =  pattern;
+        var input = document.getElementById(divid).value;
+        var isValid = regex.test(input);
+        if(isValid)
+            {
+
+                $(errmsgid).html("").show().fadeOut("slow");
+                return false;
+            }
+        else
+            {
+                $(errmsgid).html(titleid).show();
+                return false;
+            }
+     }
+
+     //preview for company template
+    function company_profile_preview(svgid,id1,id2,id3,id4,id5,id7,id8)
+    {
+        var a = document.getElementById(svgid);
+        var svgDoc = a.contentDocument;
+        if(id1==cp_screen_one_filed_one)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent=document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_two_filed_one)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent=document.getElementById(id1).value;      
+        }
+        if(id1==cp_screen_three_filed_one)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent=document.getElementById(id1).value; 
+        }
+        if(id1==cp_screen_three_filed_two)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id3).childNodes[1].textContent=document.getElementById(id1).value; 
+        }
+        if(id1==cp_screen_four_filed_one)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_one)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_two)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_three)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_four)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_five)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_five_filed_six)
+        {
+            var value=document.getElementById(id1).value;
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_six_filed_one)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_six_filed_two)
+        { 
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_six_filed_three)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_eight_filed_one)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_eight_filed_two)
+        { 
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_eight_filed_three)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_eight_filed_four)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_eight_filed_five)
+        {
+            svgDoc.getElementById(id2).childNodes[1].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_nine_filed_one)
+        {
+            svgDoc.getElementById(id2).childNodes[0].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_nine_filed_two)
+        { 
+            svgDoc.getElementById(id2).childNodes[0].textContent= document.getElementById(id1).value;
+        }
+        if(id1==cp_screen_nine_filed_three)
+        {
+            svgDoc.getElementById(id2).childNodes[0].textContent= document.getElementById(id1).value;
+        }
+    }
+
+//end
+
+// code for upload images in company profile template
+
+    function companyprofile_imageupload(input,number,id)
+    { 
+        $.LoadingOverlay("show");
+        if (input.files && input.files[0])
+        {
+            var reader = new FileReader();
+            reader.onload = function (e)
+            {
+                if(number==0)
+                {
+                    $('#cp_image0')
+                    .attr('src', e.target.result)
+                    .width(50);
+                    var a = document.getElementById(cp_svg_seen1);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(cp_screen_one_img_id).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==1)
+                {
+                    $('#cp_image1')
+                    .attr('src', e.target.result)
+                    .width(50);
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                     $.LoadingOverlay("hide");
+                }
+                else if(number==2)
+                {
+                    $('#cp_image2')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==3)
+                {
+                    $('#cp_image3')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);            
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                     $.LoadingOverlay("hide");
+                }
+                else if(number==4)
+                {
+                    $('#cp_image4')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);          
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                } 
+                else if(number==5)
+                {
+                    $('#cp_image5')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);         
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==6)
+                {
+                    $('#cp_image6')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);            
+                    var a = document.getElementById(cp_svg_seen7);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==7)
+                {
+                    $('#core_team_image1')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    var a = document.getElementById(cp_svg_seen8);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_core_team_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                } 
+                else if(number==8)
+                {
+                    $('#core_team_image2')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);
+                    var a = document.getElementById(cp_svg_seen8);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_core_team_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==9)
+                {
+                    $('#core_team_image3')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);          
+                    var a = document.getElementById(cp_svg_seen8);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_core_team_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else if(number==10)
+                {
+                    $('#core_team_image4')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);           
+                    var a = document.getElementById(cp_svg_seen8);
+                    var svgDoc = a.contentDocument;
+                     svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                else 
+                {
+                    $('#core_team_image5')
+                    .attr('src', e.target.result)
+                    .width(420)
+                    .height(225);           
+                    var a = document.getElementById(cp_svg_seen8);
+                    var svgDoc = a.contentDocument;
+                    svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', e.target.result);
+                    $.LoadingOverlay("hide");
+                }
+                $.LoadingOverlay("hide");            
+            };
+            reader.readAsDataURL(input.files[0]);
+            $.LoadingOverlay("hide");
+        }
+        if(number==0)
+        {
+            if(document.getElementById(id).value=='')
+            {
+           
+                $("#cp_errmsg1").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen1);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(cp_screen_one_img_id).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/productLogo.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg1").html("").show().fadeOut("slow"); 
+            }      
+        } 
+        if(number==1)
+        {   
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg15").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/1.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg15").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==2)
+        { 
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg16").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/2.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg16").html("").show().fadeOut("slow"); 
+            }      
+        } 
+        if(number==3)
+        { 
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg17").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/clint 6.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg17").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==4)
+        {   
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg18").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg18").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==5)
+        {
+            
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg19").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/5.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg19").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==6)
+        {
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg20").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen7);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/4.png');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg20").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==7)
+        {
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg21").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen8);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_core_team_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 1.jpg');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg21").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==8)
+        { 
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg24").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen8);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_core_team_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 2.jpg');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg24").html("").show().fadeOut("slow"); 
+            }      
+        }
+       if(number==9)
+        {  
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg26").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen8);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_core_team_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 3.jpg');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg26").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==10)
+        {
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg28").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen8);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 4.jpg');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg28").html("").show().fadeOut("slow"); 
+            }      
+        }
+        if(number==11)
+        {
+            if(document.getElementById(id).value=='')
+            {
+                $("#cp_errmsg30").html('please select image').show();
+                var a = document.getElementById(cp_svg_seen8);
+                var svgDoc = a.contentDocument;
+                svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 5.jpg');
+                $.LoadingOverlay("hide");
+            }
+            else
+            {
+                $.LoadingOverlay("hide"); 
+                $("#cp_errmsg30").html("").show().fadeOut("slow"); 
+            }      
+        }
+    }
+
+//end
+// code for to update information onload of company profile svg images 
+
+    function cp_svg_onload(svgid,gid1,gid2,gid3,gid4,gid5,gid6,gid7,gid8,gid9,gid10)
+    {
+        var a = document.getElementById(svgid);
+        var svgDoc = a.contentDocument;
+        if(svgid==cp_svg_seen1)
+        {
+            if(document.getElementById(cp_screen_one_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+                svgDoc.querySelector(cp_screen_one_img_id).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image0').src);
+            }
+            else
+            { 
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_one_filed_one).value;
+                svgDoc.querySelector(cp_screen_one_img_id).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image0').src);
+            }
+          
+        }
+        if(svgid==cp_svg_seen2)
+        {
+            var value=document.getElementById(cp_screen_two_filed_one).value;
+            if(value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_two_filed_one).value;
+            }
+        }
+        if(svgid==cp_svg_seen3)
+        {
+            if(document.getElementById(cp_screen_three_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+            svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_three_filed_one).value;
+            }
+            if(document.getElementById(cp_screen_three_filed_two).value=='')
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=svgDoc.getElementById(gid2).childNodes[1].textContent; 
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(cp_screen_three_filed_two).value;
+            }
+        }
+        if(svgid==cp_svg_seen4)
+        {
+            if(document.getElementById(cp_screen_four_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_four_filed_one).value;
+            }
+        }
+        if(svgid==cp_svg_seen5)
+        {
+            if(document.getElementById(cp_screen_five_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_one).value;
+            }
+            if(document.getElementById(cp_screen_five_filed_two).value=='')
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=svgDoc.getElementById(gid2).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_two).value;
+            }
+            if(document.getElementById(cp_screen_five_filed_three).value=='')
+            { 
+                svgDoc.getElementById(gid3).style.display='none';
+            }
+            else
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_three).value;
+            }
+            if(document.getElementById(cp_screen_five_filed_four).value=='')
+            {
+                svgDoc.getElementById(gid4).style.display='none';
+            }
+            else
+            {
+                svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_four).value;
+            }
+            if(document.getElementById(cp_screen_five_filed_five).value=='')
+            {
+                svgDoc.getElementById(gid5).style.display='none';
+            }
+            else
+            {
+                svgDoc.getElementById(gid5).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_five).value;
+            }
+            if(document.getElementById(cp_screen_five_filed_six).value=='')
+            {
+                svgDoc.getElementById(gid6).style.display='none';
+            }
+            else
+            {
+                svgDoc.getElementById(gid6).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_six).value;
+            }
+            if(gid7==1)
+            {
+                svgDoc.getElementById(gid3).style.display='block';
+                svgDoc.getElementById(gid3).childNodes[1].textContent=svgDoc.getElementById(gid3).childNodes[1].textContent;
+            }
+            if(gid7==5)
+            {
+                svgDoc.getElementById(gid3).style.display='none';
+                svgDoc.getElementById(gid3).childNodes[1].textContent='QA/QCInspection';
+            }
+            if(gid8==2)
+            {
+                svgDoc.getElementById(gid4).style.display='block';
+                svgDoc.getElementById(gid4).childNodes[1].textContent=svgDoc.getElementById(gid4).childNodes[1].textContent;
+            }
+            if(gid8==6)
+            {
+                svgDoc.getElementById(gid4).style.display='none';
+                svgDoc.getElementById(gid4).childNodes[1].textContent='ComponentDevelopment';
+                if(document.getElementById(cp_screen_five_filed_three).value !='')
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_three).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent='QA/QCInspection'; 
+                }
+            }
+            if(gid9==3)
+            {
+                svgDoc.getElementById(gid5).style.display='block';
+                svgDoc.getElementById(gid5).childNodes[1].textContent=svgDoc.getElementById(gid5).childNodes[1].textContent;
+            }
+            if(gid9==7)
+            {
+                svgDoc.getElementById(gid5).style.display='none';
+                svgDoc.getElementById(gid5).childNodes[1].textContent='E-BusinessSolutions';
+                if(document.getElementById(cp_screen_five_filed_three).value !='')
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_three).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent='QA/QCInspection'; 
+                }
+                if(document.getElementById(cp_screen_five_filed_four).value !='')
+                {
+                    svgDoc.getElementById(gid4).style.display='block';
+                    svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_four).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid4).style.display='block';
+                    svgDoc.getElementById(gid4).childNodes[1].textContent='ComponentDevelopment'; 
+                }
+            }
+            if(gid10==4)
+            {
+                svgDoc.getElementById(gid6).style.display='block';
+                svgDoc.getElementById(gid6).childNodes[1].textContent=svgDoc.getElementById(gid6).childNodes[1].textContent;
+            }
+            if(gid10==8)
+            {
+                svgDoc.getElementById(gid6).style.display='none';
+                svgDoc.getElementById(gid6).childNodes[1].textContent='DataWarehousing';
+                if(document.getElementById(cp_screen_five_filed_three).value !='')
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_three).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid3).style.display='block';
+                    svgDoc.getElementById(gid3).childNodes[1].textContent='QA/QCInspection'; 
+                }
+                if(document.getElementById(cp_screen_five_filed_four).value !='')
+                {
+                    svgDoc.getElementById(gid4).style.display='block';
+                    svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_four).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid4).style.display='block';
+                    svgDoc.getElementById(gid4).childNodes[1].textContent='ComponentDevelopment'; 
+                }
+                if(document.getElementById(cp_screen_five_filed_five).value !='')
+                {
+                    svgDoc.getElementById(gid5).style.display='block';
+                    svgDoc.getElementById(gid5).childNodes[1].textContent=document.getElementById(cp_screen_five_filed_five).value;
+                }
+                else
+                {
+                    svgDoc.getElementById(gid5).style.display='block';
+                    svgDoc.getElementById(gid5).childNodes[1].textContent='E-BusinessSolutions'; 
+                }
+            }
+        }
+        if(svgid==cp_svg_seen6)
+        {
+            if(document.getElementById(cp_screen_six_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_six_filed_one).value;
+            }
+            if(document.getElementById(cp_screen_six_filed_two).value=='')
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=svgDoc.getElementById(gid2).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(cp_screen_six_filed_two).value;
+            }
+            if(document.getElementById(cp_screen_six_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent=svgDoc.getElementById(gid3).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_six_filed_three).value;
+            }
+        }
+        if(svgid==cp_svg_seen7)
+        {
+
+            svgDoc.querySelector(client_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image1').src);
+            svgDoc.querySelector(client_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image2').src);
+            svgDoc.querySelector(client_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image3').src);
+           
+            if((document.getElementById('cp_image4').src)=='http://localhost/createObj/companyProfile')
+            {
+                svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href','');
+            }
+            else
+            {
+                svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image4').src);   
+            }
+            if((gid1==1))
+            {
+                svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png'); 
+            }
+            if(gid1==4)
+            {
+                svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href',''); 
+                document.getElementById('cp_image5').src='http://localhost/createObj/companyProfile';
+            }
+            if((document.getElementById('cp_image5').src)=='http://localhost/createObj/companyProfile')
+            {
+                svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '');
+            }
+            else
+            {
+                svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image5').src);
+            }
+            if((gid1==2))
+            {
+                svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/5.png'); 
+                if(document.getElementById('cp_image4').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png'); 
+                }
+            }
+            if(gid1==5)
+            { 
+                svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '');
+                if(document.getElementById('cp_image4').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png'); 
+                }
+                document.getElementById('cp_image6').src='http://localhost/createObj/companyProfile';
+            }
+            if((document.getElementById('cp_image6').src)=='http://localhost/createObj/companyProfile')
+            {
+                svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '');
+            }
+            else
+            {
+                svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('cp_image6').src);
+            }
+            if((gid1==3))
+            {
+                svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/4.png'); 
+                if(document.getElementById('cp_image4').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png'); 
+                }
+                if(document.getElementById('cp_image5').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/5.png'); 
+                }
+            }
+            if(gid1==6)
+            {
+                svgDoc.querySelector(client_img_id6).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', ''); 
+                if(document.getElementById('cp_image4').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/3.png'); 
+                }
+                if(document.getElementById('cp_image5').src=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/5.png'); 
+                }
+            }
+        }
+        if(svgid==cp_svg_seen8)
+        {
+            if(document.getElementById(cp_screen_eight_filed_one).value=='')
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=svgDoc.getElementById(gid1).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid1).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_one).value;
+            }
+            if(document.getElementById(cp_screen_eight_filed_two).value=='')
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=svgDoc.getElementById(gid2).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid2).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_two).value;
+            }
+            if(document.getElementById(cp_screen_eight_filed_three).value=='')
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent=svgDoc.getElementById(gid3).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid3).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_three).value;
+            }
+            if(document.getElementById(cp_screen_eight_filed_four).value=='')
+            {
+                svgDoc.getElementById(gid4).childNodes[1].textContent=svgDoc.getElementById(gid4).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_four).value;
+            }
+            if(document.getElementById(cp_screen_eight_filed_five).value=='')
+            {
+                svgDoc.getElementById(gid5).childNodes[1].textContent=svgDoc.getElementById(gid5).childNodes[1].textContent;
+            }
+            else
+            {
+                svgDoc.getElementById(gid5).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_five).value;
+            }
+            svgDoc.querySelector(client_core_team_img_id1).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('core_team_image1').src);
+            svgDoc.querySelector(client_core_team_img_id2).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('core_team_image2').src);
+            svgDoc.querySelector(client_core_team_img_id3).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('core_team_image3').src);
+            if((document.getElementById('core_team_image4').src)=='http://localhost/createObj/companyProfile')
+            {
+                svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href','');
+                svgDoc.getElementById(gid4).childNodes[1].textContent='';
+                svgDoc.getElementById('designation_4').childNodes[1].textContent='';
+                svgDoc.getElementById('cr1').style.display='none';   
+            }
+            else
+            {
+                svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('core_team_image4').src);
+            } 
+            if((gid6==1))
+            {
+                svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 4.jpg');
+                svgDoc.getElementById(gid4).childNodes[1].textContent='Name_4';
+                svgDoc.getElementById('designation_4').childNodes[1].textContent='Designation';
+                svgDoc.getElementById('cr1').style.display='block'; 
+            }
+            if((gid6==3))
+            {
+                svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '');   
+                svgDoc.getElementById(gid4).childNodes[1].textContent='';
+                svgDoc.getElementById('designation_4').childNodes[1].textContent='';
+                svgDoc.getElementById('cr1').style.display='none';
+                document.getElementById('core_team_image5').src='http://localhost/createObj/companyProfile';
+                document.getElementById('core_team_image4').src='http://localhost/createObj/companyProfile';
+            }
+            if((document.getElementById('core_team_image5').src)=='http://localhost/createObj/companyProfile')
+            {
+                svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href','');
+                svgDoc.getElementById(gid5).childNodes[1].textContent='';
+                svgDoc.getElementById('designation_5').childNodes[1].textContent='';
+                svgDoc.getElementById('cr2').style.display='none'; 
+            }
+            else
+            {
+                svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', document.getElementById('core_team_image5').src);
+            }
+            if((gid7==2))
+            {
+                svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 5.jpg');
+                svgDoc.getElementById(gid5).childNodes[1].textContent='Name_5';
+                svgDoc.getElementById('designation_5').childNodes[1].textContent='Designation';
+                svgDoc.getElementById('cr2').style.display='block';
+                if((document.getElementById('core_team_image4').src)=='http://localhost/createObj/companyProfile')
+                {
+                    svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 4.jpg');
+                    if(document.getElementById(cp_screen_eight_filed_four).value=='')
+                    {
+                        svgDoc.getElementById(gid4).childNodes[1].textContent='Name_4';
+                    }
+                    else
+                    {
+                        svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_four).value; 
+                    }
+                    svgDoc.getElementById('designation_4').childNodes[1].textContent='Designation';
+                    svgDoc.getElementById('cr1').style.display='block'; 
+                } 
+            }
+            if((gid7==4))
+            {
+            
+            svgDoc.querySelector(client_core_team_img_id5).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '');
+            
+        svgDoc.getElementById(gid5).childNodes[1].textContent='';
+            svgDoc.getElementById('designation_5').childNodes[1].textContent='';
+            svgDoc.getElementById('cr2').style.display='none'; 
+            if((document.getElementById('core_team_image4').src)=='http://localhost/createObj/companyProfile')
+            {
+
+             svgDoc.querySelector(client_core_team_img_id4).setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '/images/company profile svgs/core team 4.jpg');
+               if(document.getElementById(cp_screen_eight_filed_four).value=='')
+             {
+                svgDoc.getElementById(gid4).childNodes[1].textContent='Name_4';
+             }
+             else
+             {
+               svgDoc.getElementById(gid4).childNodes[1].textContent=document.getElementById(cp_screen_eight_filed_four).value; 
+             }
+            svgDoc.getElementById('designation_4').childNodes[1].textContent='Designation';
+            svgDoc.getElementById('cr1').style.display='block'; 
+            
+            }
+           
+       
+             // svgDoc.getElementById('cr2').add(); 
+        }
+
+        
+    }
+
+     if(svgid==cp_svg_seen9)
+    {
+        
+        if(document.getElementById(cp_screen_nine_filed_one).value=='')
+        {
+           svgDoc.getElementById(gid1).childNodes[0].textContent=svgDoc.getElementById(gid1).childNodes[0].textContent;
+           // $.LoadingOverlay("hide"); 
+        }
+        else{
+            svgDoc.getElementById(gid1).childNodes[0].textContent=document.getElementById(cp_screen_nine_filed_one).value;
+             // $.LoadingOverlay("hide");
+        }
+        if(document.getElementById(cp_screen_nine_filed_two).value=='')
+        {
+             svgDoc.getElementById(gid2).childNodes[0].textContent= svgDoc.getElementById(gid2).childNodes[0].textContent;
+             // $.LoadingOverlay("hide");
+        }
+        else
+        {
+           
+            svgDoc.getElementById(gid2).childNodes[0].textContent=document.getElementById(cp_screen_nine_filed_two).value;
+             // $.LoadingOverlay("hide");
+        }
+        if(document.getElementById(cp_screen_nine_filed_three).value=='')
+        {
+             svgDoc.getElementById(gid3).childNodes[0].textContent= svgDoc.getElementById(gid3).childNodes[0].textContent;
+             // $.LoadingOverlay("hide");
+        }
+        else
+        {
+            svgDoc.getElementById(gid3).childNodes[0].textContent=document.getElementById(cp_screen_nine_filed_three).value;
+             // $.LoadingOverlay("hide");
+        }
+       
+        
+    }
+    
+    
+}
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        var $pagination = $('#company_profile_navigation').simplePagination(
+        {
+            previous_content: '<i class="fa fa-arrow-left"></i>', 
+            next_content: '<i class="fa fa-arrow-right"></i>', 
+            number_of_visible_page_numbers: 1,
+            items_per_page: 1,
+            pagination_container: 'ul',
+            html_prefix: 'simple-pagination',
+            navigation_element: 'a', 
+        });
+    });
+</script>
+<script type="text/javascript">
+$(window).load(function(){
+$(function(){ 
+    $('.form-control').keyup(function(){ 
+var size = parseInt($(this).attr('size')); 
+var chars = $(this).val().length; 
+if(chars >= size) $(this).attr('size', chars); 
+    }); 
+});
+ $(".play-single").magnificPopup({
+        type: "iframe"
+    });
+$('#btn1').click(function()
+ {
+    document.getElementById("services3").required = true;
+    document.getElementById("services3").disabled = false;
+     cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,1);
+    $('#services3').show();
+    $('#btnminus2').show();
+    $('#btnminus1').hide();
+    $('#btn2').show();
+    $('#break1').show();
+    $('#break2').show();
+    $('#btn1').hide();
+ })
+ $('#btn2').click(function()
+ {
+    
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,1,2);
+    document.getElementById("services4").required = true;
+    document.getElementById("services4").disabled = false;
+    $('#services4').show();
+    $('#btnminus3').show();
+    $('#btnminus2').hide();
+    $('#btn3').show();
+    $('#break3').show();
+    $('#break4').show();
+    $('#btn2').hide();
+    $('#btn1').hide();
+   
+ })
+ $('#btn3').click(function()
+ {  
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,1,2,3);
+   document.getElementById("services5").required = true;
+   document.getElementById("services5").disabled = false;
+    $('#services5').show();
+    $('#btnminus4').show();
+    $('#btnminus3').hide();
+    $('#break5').show();
+    $('#break6').show();
+    $('#btn4').show();
+    $('#btn3').hide();
+    $('#btn2').hide();
+    $('#btn1').hide();
+   
+ })
+ $('#btn4').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,1,2,3,4);
+   document.getElementById("services6").required = true;
+   document.getElementById("services6").disabled = false;
+    $('#services6').show();
+    $('#btnminus5').show();
+    $('#btnminus4').hide();
+    $('#btn4').hide();
+    $('#btn3').hide();
+    $('#btn2').hide();
+    $('#btn1').hide();
+   
+ })
+
+ $('#btnminus2').click(function()
+ {
+    document.getElementById('services3').value='';
+    document.getElementById('cp_errmsg8').innerHTML='';
+   cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,5);
+    document.getElementById("services3").required = false;
+    document.getElementById("services3").disabled = true;
+    $('#services3').hide();
+    $('#btnminus2').hide();
+    $('#btn1').show();
+    $('#btn2').hide();
+    $('#break1').hide();
+    $('#break2').hide();
+ })
+ $('#btnminus3').click(function()
+ {  
+    document.getElementById('services4').value='';
+    document.getElementById('cp_errmsg9').innerHTML='';
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,5,6);
+    document.getElementById("services4").required = false;
+    document.getElementById("services4").disabled = true;
+    $('#services4').hide();
+    $('#btnminus3').hide();
+    $('#btnminus2').show();
+    $('#btn3').hide();
+    $('#btn1').hide();
+    $('#btn2').show();
+     $('#break3').hide();
+    $('#break4').hide();
+ })
+ $('#btnminus4').click(function()
+ {
+    document.getElementById('services5').value='';
+    document.getElementById('cp_errmsg10').innerHTML='';
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,5,6,7);
+    document.getElementById("services5").required = false;
+    document.getElementById("services5").disabled = true;
+    $('#services5').hide();
+    $('#btnminus4').hide();
+    $('#btnminus3').show();
+    $('#btn4').hide();
+    $('#btn3').show();
+    $('#btn2').hide();
+    $('#btn1').hide();
+    
+ })
+ $('#btnminus5').click(function()
+ {
+    document.getElementById('services6').value='';
+    document.getElementById('cp_errmsg11').innerHTML='';
+    cp_svg_onload('company_rofile_svgObject5',cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6,5,6,7,8);
+    document.getElementById("services6").required = false;
+    document.getElementById("services6").disabled = true;       
+    $('#services6').hide();
+    $('#btnminus5').hide();
+    $('#btnminus4').show();
+    $('#btn4').show();
+    $('#btn3').hide();
+    $('#btn2').hide();
+    $('#btn1').hide();
+
+ })
+
+
+$('#cline_logo_btn1').click(function()
+ {
+     cp_svg_onload('company_rofile_svgObject7',1);
+      document.getElementById("cp_img_4").required = true;
+      document.getElementById("cp_img_4").disabled = false;
+    $('#client_logo_label1').show();
+    $('#cp_img_4').show();
+    $('#cline_logo_btn2').show();
+    $('#cline_logo_minusbtn1').show();
+    $('#cl_br1').show();
+    $('#cl_br2').show();
+    $('#cline_logo_btn1').hide();
+ })
+$('#cline_logo_btn2').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject7',2);
+     document.getElementById("cp_img_5").required = true;
+     document.getElementById("cp_img_5").disabled = false;
+    $('#client_logo_label2').show();
+    $('#cp_img_5').show();
+    $('#cline_logo_btn3').show();
+    $('#cline_logo_minusbtn2').show();
+    $('#cl_br2').show();
+    $('#cl_br3').show();
+    $('#cline_logo_btn2').hide();
+    $('#cline_logo_minusbtn1').hide();
+    
+ })
+$('#cline_logo_btn3').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject7',3);
+    document.getElementById("cp_img_6").required = true;
+    document.getElementById("cp_img_6").disabled = false;
+    $('#client_logo_label3').show();
+    $('#cp_img_6').show();
+    $('#cline_logo_minusbtn3').show();
+    $('#cl_br3').show();
+    $('#cl_br4').show();
+    $('#cline_logo_btn3').hide();
+    $('#cline_logo_minusbtn2').hide();
+    
+ })
+$('#cline_logo_minusbtn1').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject7',4);
+    document.getElementById("cp_img_4").required = false;
+    document.getElementById("cp_img_4").disabled =true; 
+    document.getElementById("cp_img_4").value='';
+    document.getElementById("cp_errmsg18").innerHTML='';
+    $('#client_logo_label1').hide();
+    $('#cp_img_4').hide();
+    $('#cline_logo_btn2').hide();
+    $('#cline_logo_minusbtn1').hide();
+    $('#cl_br1').hide();
+    $('#cl_br2').hide();
+    $('#cline_logo_btn1').show();
+    
+ })
+$('#cline_logo_minusbtn2').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject7',5);
+    document.getElementById("cp_img_5").required = false;
+    document.getElementById("cp_img_5").disabled = true;
+    document.getElementById("cp_img_5").value='';
+     document.getElementById("cp_errmsg19").innerHTML='';
+    $('#client_logo_label2').hide();
+    $('#cp_img_5').hide();
+    $('#cline_logo_btn3').hide();
+    $('#cline_logo_minusbtn2').hide();
+    $('#cl_br3').hide();
+    $('#cl_br4').hide();
+    $('#cline_logo_btn2').show();
+    $('#cline_logo_minusbtn1').show();
+    
+ })
+$('#cline_logo_minusbtn3').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject7',6);
+    document.getElementById("cp_img_6").required = false;
+    document.getElementById("cp_img_6").disabled =true; 
+    document.getElementById("cp_img_6").value='';
+     document.getElementById("cp_errmsg20").innerHTML='';
+    $('#client_logo_label3').hide();
+    $('#cp_img_6').hide();
+    $('#cline_logo_btn4').hide();
+    $('#cline_logo_minusbtn3').hide();
+    $('#cl_br3').hide();
+    $('#cl_br4').hide();
+    $('#cline_logo_btn3').show();
+    $('#cline_logo_minusbtn2').show();
+    
+ })
+
+$('#team_btn1').click(function()
+ {
+     cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5,1);
+     document.getElementById("screen8id4").required = true;
+     document.getElementById("mebember4Name").required = true;
+     document.getElementById("screen8id4").disabled =false; 
+     document.getElementById("mebember4Name").disabled =false; 
+    $('#teamlabel1').show();
+    $('#screen8id4').show();
+    $('#team_name_label1').show();
+    $('#mebember4Name').show();
+    $('#team_btn2').show();
+    $('#team_minus_btn1').show();
+    $('#teambr1').show();
+    $('#teambr2').show();
+    $('#teambr3').show();
+    $('#team_btn1').hide();
+ })
+
+$('#team_btn2').click(function()
+ {
+      cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5,'',2);
+      document.getElementById("screen8id5").required = true;
+     document.getElementById("mebember5Name").required = true;
+        document.getElementById("screen8id5").disabled =false; 
+     document.getElementById("mebember5Name").disabled =false;
+    $('#teamlabel2').show();
+    $('#screen8id5').show();
+    $('#team_name_label2').show();
+    $('#mebember5Name').show();
+    $('#team_minus_btn2').show();
+    $('#teambr4').show();
+    $('#teambr5').show();
+    $('#team_minus_btn1').hide();
+    $('#team_btn2').hide();
+ })
+
+$('#team_minus_btn1').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5,3);
+    document.getElementById('cp_errmsg27').innerHTML='';
+    document.getElementById('cp_errmsg28').innerHTML='';
+    document.getElementById("screen8id4").required = false;
+    document.getElementById("screen8id4").value='';
+    document.getElementById("mebember4Name").value = '';
+     document.getElementById("mebember4Name").required = false;
+        document.getElementById("screen8id4").disabled =true; 
+     document.getElementById("mebember4Name").disabled =true;
+    $('#teamlabel1').hide();
+    $('#screen8id4').hide();
+    $('#team_name_label1').hide();
+    $('#mebember4Name').hide();
+    $('#team_btn2').hide();
+    $('#team_minus_btn1').hide();
+    $('#teambr1').hide();
+    $('#teambr2').hide();
+    $('#teambr3').hide();
+    $('#team_btn1').show();
+    $('#cp_errmsg24').hide(); 
+     
+ })
+$('#team_minus_btn2').click(function()
+ {
+    cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5,'',4);
+document.getElementById('cp_errmsg29').innerHTML='';
+document.getElementById('cp_errmsg30').innerHTML='';
+    document.getElementById("screen8id5").required = false;
+    document.getElementById("screen8id5").value='';
+    document.getElementById("mebember5Name").value = '';
+     document.getElementById("mebember5Name").required = false;
+        document.getElementById("screen8id5").disabled =true; 
+     document.getElementById("mebember5Name").disabled =true;
+    $('#teamlabel2').hide();
+    $('#screen8id5').hide();
+    $('#team_name_label2').hide();
+    $('#mebember5Name').hide();
+    $('#cp_errmsg26').hide();
+    $('#team_minus_btn2').hide();
+    $('#teambr4').hide();
+    $('#teambr5').hide();
+    $('#team_minus_btn1').show();
+    $('#team_btn2').show(); 
+ })
+ $('#no_of_services').change(function()
+            {
+        var count = $('.option:text').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofServices').value=count;
+        
+    });
+  $('#no_of_clients').change(function()
+            {
+        var count = $('.option:file').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofClients').value=count;
+       
+    });
+   $('#no_of_clients').click(function()
+            {
+        var count = $('.option:file').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofClients').value=count;
+        
+    });
+  $('#no_of_services').click(function()
+            {
+        var count = $('.option:text').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofServices').value=count;
+        
+    });
+  $('#no_of_teammembers').change(function()
+            {
+        var count = $('.option1:file').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofTeamMembers').value=count;
+        // alert(document.getElementById('NumberofTeamMembers').value);
+    });
+  $('#no_of_teammembers').click(function()
+            {
+        var count = $('.option1:file').filter(function(input){
+            return $(this).val() != "";
+        }).length;
+
+        document.getElementById('NumberofTeamMembers').value=count;
+         // alert(document.getElementById('NumberofTeamMembers').value);
+    });
+});
+</script>
+<body id='popupclose'>
+    <div id='Company' style="background-color: #5F9EA0">
+<h3>COMPANY PROFILE</h3>
+
+<form id="contact-form" action="/prepareObject" method="post" enctype = "multipart/form-data" >
+<div id="company_profile_navigation" style="width: 100%">
+  <div class="my-navigation" >
+        <div class="simple-pagination-first" ></div>
+        <div class="nav-wrap" style="margin-left: 2%">
+            <div class="simple-pagination-previous"  id='backward_btn'></div>
+            <div class="simple-pagination-page-numbers"  ></div>
+            <div class="simple-pagination-next"   id='forward_btn' ></div>
+        </div>
+         <div class="simple-pagination-last" style="margin-left:  2%"></div>
+  </div>
+
+<ul class="gallery" >
+
+  <div >
+
+    <div class="container">
+      
+ <% if(elem.TemplateDemoVideo ==''){ %>
+   
+ <% } else{ %>  
+                      <a href="<%= elem.TemplateDemoVideo %>" class="play-single" style="float: right;">Play demo video</a><% } %>  
+
+   
+    <div id="image_wrapper">
+        <div id="get_image_wrapper">
+    <input type="file" name="" id='file1' onclick='companyprofile_imageupload(this,0,this.id);' onchange="companyprofile_imageupload(this,0,this.id);">           
+</div>
+        <div id="image">
+            <img src="" alt="#" id="img" />
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" id="svg"></svg>
+        </div>
+    </div>
+
+
+ <!--  <div id="dialog"> <object type="image/svg+xml" data="/images/svg files/Scene_01.svg" id='svgObject' onload="details(this.id,svg_seen1_id1,svg_seen1_id2);">
+    </object> </div>
+<a href="#" id="open" style="float: right;">Preview</a><br> -->
+<!-- <div id="popup" data-name="name" class="dialog" style=" width:100%;">
+    <object type="image/svg+xml" data="/images/svg files/Scene_01.svg" id='svgObject' onload="details(this.id,svg_seen1_id1,svg_seen1_id2);">
+    </object>         
+</div> -->
+
+<!-- <table border="1" style="float: right;">
+    <tr>
+        <td class="cell-which-triggers-popup">Preview</td>
+    </tr> 
+</table><br><br> -->
+      <p>Provide your company name 
+
+      <input id="companyName" type="text" class="form-control " name="companyName" size='20'
+              pattern="[A-Za-z\s]{2,20}"
+              placeholder="Your company name" value="" title="Company name should be min length of 2 and max length of 20 from A-Z,a-z" required  onchange="cp_svg_onload('company_rofile_svgObject1',cp_svg_seen1_id1);validate(this.id,/^[A-Za-z\s]{2,20}$/,'#cp_errmsg',this.title);" ><br><span id="cp_errmsg" class='errmsg'></span>
+              <br>
+     Company logo
+      <input 
+              type="file" 
+              class="btn btn-default btn-file col-xs-12" id='cp_logo' 
+              name="productLogo" required onclick='companyprofile_imageupload(this,0,this.id);' onchange="companyprofile_imageupload(this,0,this.id);"><br><span id="cp_errmsg1" class='errmsg'></span><br>
+              <img  id="cp_image0" src="/images/productLogo.png"   style="display: none;"/>
+              
+    </div><br>
+    <object type="image/svg+xml" data="/images/company profile svgs/00.svg" id='company_rofile_svgObject1' onload="cp_svg_onload(this.id,cp_svg_seen1_id1);">
+    </object>
+  </div>
+  <div >
+    <div class="container"  >
+      <p><label for="">Tell us about your company </label>
+      <input
+              id="aboutCompany" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="aboutCompany" 
+              pattern="[A-Za-z0-9\s]{2,60}"
+              placeholder="about your company " 
+              title="About your company should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject2',cp_svg_seen2_id1);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg2',this.title);"> <br><span id="cp_errmsg2" class='errmsg'></span>
+      </p></div><br>
+      <object type="image/svg+xml" data="/images/company profile svgs/01.svg" id='company_rofile_svgObject2' onload="cp_svg_onload(this.id,cp_svg_seen2_id1)"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+     
+      <p><label for="">Provide your vision statement </label>
+      <input
+              id="visionStatement" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="visionStatement" 
+              pattern="[A-Za-z0-9\s]{2,60}"
+              placeholder="your company vision " 
+              title="vision should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject3',cp_svg_seen3_id1,cp_svg_seen3_id2);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg3',this.title);"> <br><span id="cp_errmsg3" class='errmsg'></span>
+      </p>
+  <p><label for="">mission  statement </label>
+      <input
+              id="missionStatement" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="missionStatement" 
+              pattern="[A-Za-z0-9\s]{2,60}"
+              placeholder="your company mission  " 
+              title="mission  should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject3',cp_svg_seen3_id1,cp_svg_seen3_id2);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg4',this.title);"> <br><span id="cp_errmsg4" class='errmsg'></span>
+      </p></div><br>
+
+    <object type="image/svg+xml" data="/images/company profile svgs/02.svg" id='company_rofile_svgObject3' onload="cp_svg_onload(this.id,cp_svg_seen3_id1,cp_svg_seen3_id2)"></object>
+  </div>
+
+ 
+
+  <div>
+    <div class="container"  >
+      Tell us about your company main philosophy  <input
+              id="companyPhilosophy" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="companyPhilosophy" 
+              placeholder="Provide Value statement"
+              pattern="[A-Za-z\s]{2,60}"
+        title="philosophy should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject4',cp_svg_seen4_id1);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg5',this.title);"> <br><span id="cp_errmsg5" class='errmsg'></span>
+    </div><br>
+
+    <object type="image/svg+xml" data="/images/company profile svgs/03.svg" id='company_rofile_svgObject4' onload="cp_svg_onload(this.id,cp_svg_seen4_id1)"></object>
+  </div>
+
+  <div>
+    <div class="container"  id='no_of_services'>
+      <p>Provide the services you offer to your clients</p>
+      <p> 
+        <input 
+              id="services1" 
+              type="text"
+              size="20" 
+              class="option form-control" 
+              name="services1" 
+              placeholder="First Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg6',this.title);"><br><span id="cp_errmsg6" class='errmsg'></span><br>
+    
+      <input 
+              id="services2" 
+              type="text" 
+              class="option form-control" 
+              size='20'
+              name="services2" 
+              placeholder="Second Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg7',this.title);"><button class="button button4" id='btn1' type="button">+</button><br><span id="cp_errmsg7" class='errmsg'></span>
+       <br>
+    <input 
+              id="services3" 
+              type="text" 
+              class="option form-control" 
+              size='20'
+              name="services3" 
+              placeholder="Third Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z" style='display: none;'   onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg8',this.title);"disabled><button class="button button4" id='btn2' style='display: none;' type="button">+</button><button class="button button4" id='btnminus2' style='display: none;' type="button">-</button><br style='display: none;' id='break1'><span id="cp_errmsg8" class='errmsg' ></span>
+       <br style='display: none;' id='break2'>
+        <input 
+              id="services4" 
+              type="text" 
+              class="option form-control" 
+              size='20'
+              name="services4" 
+              placeholder="Fourth Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z"  style='display: none;' onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg9',this.title);"disabled><button class="button button4" id='btn3' style='display: none;' type="button">+</button><button class="button button4" id='btnminus3' style='display: none;' type="button">-</button><br style='display: none;' id='break3'><span id="cp_errmsg9" class='errmsg'></span>
+       <br style='display: none;' id='break4'>
+        <input 
+              id="services5" 
+              type="text" 
+              class="option form-control" 
+              size='20'
+              name="services5" 
+              placeholder="Fiveth Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z"  style='display: none;' onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg10',this.title);"disabled><button class="button button4" id='btn4' style='display: none;' type="button">+</button><button class="button button4" id='btnminus4' style='display: none;' type="button">-</button><br style='display: none;' id='break5'><span id="cp_errmsg10" class='errmsg'></span>
+       <br style='display: none;' id='break6'> 
+       <input 
+              id="services6" 
+              type="text" 
+              class="option form-control" 
+              size='20'
+              name="services6" 
+              placeholder="Sixth Service"
+              pattern="[A-Za-z0-9\s]{2,60}"
+              title="Service should be min length of 2 and max length of 60 with A-Za-z"  style='display: none;' onchange="cp_svg_onload('company_rofile_svgObject5',
+              cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg11',this.title);"disabled><button class="button button4" id='btnminus5' style='display: none;' type="button">-</button><br><span id="cp_errmsg11" class='errmsg'></span>
+       <br>
+   </p>
+    </div><br>
+     <object type="image/svg+xml" data="/images/company profile svgs/04.svg" id='company_rofile_svgObject5' onload="cp_svg_onload(this.id,cp_svg_seen5_id1,cp_svg_seen5_id2,cp_svg_seen5_id3,cp_svg_seen5_id4,cp_svg_seen5_id5,cp_svg_seen5_id6)"></object>
+  </div>
+
+  <div>
+    <div class="container"  >
+      <p> Provide your unique expertise that helps you to differ from competitors </p>
+      <p> 
+        <input 
+              id="expertiseTextField1" 
+              type="text"
+              size="20" 
+              class="form-control" 
+              name="expertiseTextField1" 
+              placeholder="First Expertise"
+              pattern="[A-Za-z0-9\s]{2,60}"
+            title="Expertise should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject6',
+              cp_svg_seen6_id1,cp_svg_seen6_id2,cp_svg_seen6_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg12',this.title);"><br><span id="cp_errmsg12" class='errmsg'></span><br>
+    
+      <input 
+              id="expertiseTextField2" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="expertiseTextField2" 
+              placeholder="Second Expertise"
+              pattern="[A-Za-z0-9\s]{2,60}"
+            title="Expertise should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject6',
+              cp_svg_seen6_id1,cp_svg_seen6_id2,cp_svg_seen6_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg13',this.title);"><br><span id="cp_errmsg13" class='errmsg'></span>
+       <br>
+    <input 
+              id="expertiseTextField3" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="expertiseTextField3" 
+              placeholder="Third Expertise"
+              pattern="[A-Za-z0-9\s]{2,60}"
+            title="Expertise should be min length of 2 and max length of 60 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject6',
+              cp_svg_seen6_id1,cp_svg_seen6_id2,cp_svg_seen6_id3);validate(this.id,/^[A-Za-z0-9\s]{2,60}$/,'#cp_errmsg14',this.title);"><br><span id="cp_errmsg14" class='errmsg'></span>
+       <br></p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/company profile svgs/05.svg" id='company_rofile_svgObject6' onload="cp_svg_onload(this.id,cp_svg_seen6_id1,cp_svg_seen6_id2,cp_svg_seen6_id3)"></object>
+   <img  id="image2" src="/images/placeholder_image.png"   style="display: none;"/>
+  </div>
+
+  <div>
+    <div class="container" id='no_of_clients' >
+      <p>Upload your leading client logos who anchor your core expertise<br>
+      <label>Client Logo</label><input type="file" id='cp_img_1' class="option btn btn-default btn-file col-xs-12" name="screen1" required  onclick='companyprofile_imageupload(this,1,this.id);'onchange="companyprofile_imageupload(this,1,this.id);"><br><span id="cp_errmsg15" class='errmsg'></span><br>
+      <img  id="cp_image1" src="/images/company profile svgs/1.png"   style="display: none;"/>
+
+      <label>Client Logo</label><input type="file" id='cp_img_2' class="option btn btn-default btn-file col-xs-12" name="screen2" required  onclick='companyprofile_imageupload(this,2,this.id);'onchange="companyprofile_imageupload(this,2,this.id);"><br><span id="cp_errmsg16" class='errmsg'></span><br>
+      <img  id="cp_image2" src="/images/company profile svgs/2.png"   style="display: none;"/>
+
+      <label>Client Logo</label><input type="file" id='cp_img_3' class="option btn btn-default btn-file col-xs-12" name="screen3" required  onclick='companyprofile_imageupload(this,3,this.id);'onchange="companyprofile_imageupload(this,3,this.id);" ><button class="button button4" id='cline_logo_btn1' type="button">+</button><br><span id="cp_errmsg17" class='errmsg'></span><br>
+      <img  id="cp_image3" src="/images/company profile svgs/clint 6.png"   style="display: none;"/>
+
+      <label id='client_logo_label1' style="display: none">Client Logo</label><input type="file" style="display: none" id='cp_img_4' class=" option btn btn-default btn-file col-xs-12" name="screen4"   onclick='companyprofile_imageupload(this,4,this.id);'onchange="companyprofile_imageupload(this,4,this.id);" disabled><button class="button button4" id='cline_logo_btn2' style="display: none" type="button">+</button><button class="button button4" id='cline_logo_minusbtn1' style="display: none" type="button">-</button><br style="display: none;" id='cl_br1'><span id="cp_errmsg18" class='errmsg'></span><br style="display: none;" id='cl_br2'>
+      <img  id="cp_image4" src=""   style="display: none;"/>
+
+      <label id='client_logo_label2' style="display: none">Client Logo</label><input type="file" id='cp_img_5' class="option btn btn-default btn-file col-xs-12" name="screen5"   onclick='companyprofile_imageupload(this,5,this.id);'onchange="companyprofile_imageupload(this,5,this.id);" style="display: none;" disabled><button class="button button4" id='cline_logo_btn3' style="display: none" type="button">+</button><button class="button button4" id='cline_logo_minusbtn2' style="display: none" type="button">-</button><br style="display: none;" id='cl_br3'><span id="cp_errmsg19" class='errmsg'></span><br style="display: none;" id='cl_br4'>
+      <img  id="cp_image5" src=""   style="display: none;"/>
+
+      <label id='client_logo_label3' style="display: none">Client Logo</label><input type="file" id='cp_img_6' class="option btn btn-default btn-file col-xs-12" name="screen6"   onclick='companyprofile_imageupload(this,6,this.id);'onchange="companyprofile_imageupload(this,6,this.id);" style="display: none;" disabled><button class="button button4" id='cline_logo_minusbtn3' style="display: none;" type="button">-</button><br style="display: none;" id='cl_br5'><br><span id="cp_errmsg20" class='errmsg'></span><br style="display: none;" id='cl_br6'>
+      <img  id="cp_image6" src=""   style="display: none;"/>
+      </p>
+    </div><br>
+    <object type="image/svg+xml" data="/images/company profile svgs/06.svg" id='company_rofile_svgObject7' onload="cp_svg_onload(this.id)"></object>
+      
+  </div>
+
+  <div>
+   <div class="container"  id='no_of_teammembers'>
+      <p>Upload pictures of your core team<br>
+      <label>Team member Logo</label><input type="file" id='screen8id1' class="option1 btn btn-default btn-file col-xs-12" name="screen7" required  onclick='companyprofile_imageupload(this,7,this.id);'onchange="companyprofile_imageupload(this,7,this.id);"><label>Team mebember name</label><input 
+              id="mebember1Name" 
+              type="text" 
+              class="option1 form-control" 
+              name="mebember1Name" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your team member name" 
+              title="member name should be min length of 2 and max length of 20 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#cp_errmsg22',this.title);"><br><span id="cp_errmsg21" class='errmsg'></span><br><span id="cp_errmsg22" class='errmsg'></span><br>
+      <img  id="core_team_image1" src="/images/company profile svgs/core team 1.jpg"   style="display: none;"/>
+      <label>Team member Logo</label><input type="file" id='screen8id2' class="option1 btn btn-default btn-file col-xs-12" name="screen8" required  onclick='companyprofile_imageupload(this,8,this.id);'onchange="companyprofile_imageupload(this,8,this.id);"><label>Team mebember name</label><input 
+              id="mebember2Name" 
+              type="text" 
+              class="option1 form-control" 
+              name="mebember2Name" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your team member name" 
+              title="member name should be min length of 2 and max length of 20 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#cp_errmsg23',this.title);"><br><span id="cp_errmsg24" class='errmsg'></span><br><span id="cp_errmsg23" class='errmsg'></span><br>
+      <img  id="core_team_image2" src="/images/company profile svgs/core team 2.jpg"   style="display: none;"/>
+      <label>Team member Logo</label><input type="file" id='screen8id3' class="option1 btn btn-default btn-file col-xs-12" name="screen9" required  onclick='companyprofile_imageupload(this,9,this.id);'onchange="companyprofile_imageupload(this,9,this.id);"><label>Team mebember name</label><input 
+              id="mebember3Name" 
+              type="text" 
+              class="option1 form-control" 
+              name="mebember3Name" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your team member name" 
+              title="member name should be min length of 2 and max length of 20 with A-Za-z" required  onchange="cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#cp_errmsg25',this.title);"><button class="button button4" id='team_btn1' type="button">+</button><br><span id="cp_errmsg26" class='errmsg'></span><br><span id="cp_errmsg25" class='errmsg'></span><br>
+      <img  id="core_team_image3" src="/images/company profile svgs/core team 3.jpg"   style="display: none;"/>
+
+      <label id='teamlabel1' style="display: none;">Team member Logo</label><input type="file" id='screen8id4' class="option1 btn btn-default btn-file col-xs-12" name="screen10"   onclick='companyprofile_imageupload(this,10,this.id);'onchange="companyprofile_imageupload(this,10,this.id);" style="display: none;" disabled><label id='team_name_label1' style="display: none;">Team mebember name</label><input 
+              id="mebember4Name" 
+              type="text" 
+              class="option1 form-control" 
+              name="mebember4Name" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your team member name" 
+              title="member name should be min length of 2 and max length of 20 with A-Za-z"   onchange="cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#cp_errmsg27',this.title);" style="display: none;" disabled><button class="button button4" id='team_btn2' style="display: none" type="button">+</button><button class="button button4" id='team_minus_btn1' style="display: none;width: 20px;" type="button">-</button><br id='teambr1' style="display: none;"><span id="cp_errmsg28" class='errmsg'></span><br id='teambr2' style="display: none;"><span id="cp_errmsg27" class='errmsg'></span><br id='teambr3' style="display: none;">
+      <img  id="core_team_image4" src=""   style="display: none;"/>
+
+      <label id='teamlabel2' style="display: none;">Team member Logo</label><input type="file" id='screen8id5' class="option1 btn btn-default btn-file col-xs-12" name="screen11"   onclick='companyprofile_imageupload(this,11,this.id);'onchange="companyprofile_imageupload(this,11,this.id);" style='display: none;' disabled><label id='team_name_label2' style="display: none;">Team mebember name</label><input 
+              id="mebember5Name" 
+              type="text" 
+              class="option1 form-control" 
+              name="mebember5Name" 
+              pattern="[A-Za-z0-9\s]{2,20}"
+              placeholder="Your team member name" 
+              title="member name should be min length of 2 and max length of 20 with A-Za-z"   onchange="cp_svg_onload('company_rofile_svgObject8',cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5);validate(this.id,/^[A-Za-z0-9\s]{2,20}$/,'#cp_errmsg29',this.title);" style="display: none;" disabled><button class="button button4" id='team_minus_btn2' style="display: none" type="button">-</button><br id='teambr4' style="display: none;"><span id="cp_errmsg30" class='errmsg'></span><br id='teambr5' style="display: none;"><span id="cp_errmsg29" class='errmsg'></span><br>
+      <img  id="core_team_image5" src=""   style="display: none;"/>
+      </p>
+    </div><br>
+     <object type="image/svg+xml" data="/images/company profile svgs/07.svg" id='company_rofile_svgObject8' onload="cp_svg_onload(this.id,cp_svg_seen8_id1,cp_svg_seen8_id2,cp_svg_seen8_id3,cp_svg_seen8_id4,cp_svg_seen8_id5)"></object>
+      <img  id="image4" src="/images/company profile svgs/core team 4.jpg"   style="display: none;"/>
+  </div>
+
+  <div>
+      <div class="container"  >
+        <p> Provide your contact details</p>
+        <label>Your website </label>
+        <input 
+              id="website" 
+              type="text" 
+              class="form-control" 
+              size='20'
+              name="website" 
+              placeholder="website address"
+              pattern="[A-Za-z0-9\s]{2,20}"
+              title="website should be in valid format" required  onchange="cp_svg_onload('company_rofile_svgObject9',cp_svg_seen9_id1,cp_svg_seen9_id2,cp_svg_seen9_id3);"><br><span id="cp_errmsg31" class='errmsg'></span><br>
+              <label>Your Email ID  </label>
+        <input 
+              id="Email" 
+              type="email" 
+              class="form-control"
+              size='20' 
+              name="Email" 
+              placeholder="Enter Email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              title="Email should be valid format" required  onchange="cp_svg_onload('company_rofile_svgObject9',cp_svg_seen9_id1,cp_svg_seen9_id2,cp_svg_seen9_id3);validate(this.id,/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/,'#cp_errmsg32',this.title);"><br><span id="cp_errmsg32" class='errmsg'></span><br>
+              <label>Your phone number  </label>
+        <input 
+              id="mobileNumber" 
+              type="number" 
+              class="form-control" 
+              size='20'
+              name="mobileNumber" 
+              placeholder="Enter  mobile Number"
+              pattern="^[7-9][0-9]{9}$"
+              title="Mobile number should be  length of 10 start with 7,8,9" required  onchange="cp_svg_onload('company_rofile_svgObject9',cp_svg_seen9_id1,cp_svg_seen9_id2,cp_svg_seen9_id3);validate(this.id,/^[7-9][0-9]{9}$/,'#cp_errmsg33',this.title);"><br><span id="cp_errmsg33" class='errmsg'></span><br>
+              <div align="center" > 
+      <button type="submit" >
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+      <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+        l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+      </button>
+    </div>
+      </div><br>
+      <object type="image/svg+xml" data="/images/company profile svgs/08.svg" id='company_rofile_svgObject9' onload="cp_svg_onload(this.id,cp_svg_seen9_id1,cp_svg_seen9_id2,cp_svg_seen9_id3)"></object>
+      <input id="TemplateName" type="text" class="form-control" name="TemplateName" style="display:none" value="CompanyProfile">
+       <input id="aepfile" type="text" class="form-control" name="AEP_File" style="display:none" value="Company_profile.aep">
+       <input id="NumberofServices" type="text" class="form-control" name="NumberofServices" style="display:none" >
+       <input id="NumberofClients" type="text" class="form-control" name="NumberofClients" style="display:none" >
+        <input id="NumberofTeamMembers" type="text" class="form-control" name="NumberofTeamMembers" style="display:none" >
+      <input id="target" type="text" class="form-control" name="target" style="display:none" value="template_02">
+       
+  </div>
+
+
+ 
+</ul>   
+</div>
+</form>
+</div>
+</body>
+</html>
